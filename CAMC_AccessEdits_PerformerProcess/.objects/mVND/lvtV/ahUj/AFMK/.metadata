@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Static",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "AFMKnrjfn0KAcMx-nv6aLQ",
+  "Reference": "7FZokQnjH0eHWoA52xuu7g/AFMKnrjfn0KAcMx-nv6aLQ",
+  "ParentRef": "7FZokQnjH0eHWoA52xuu7g/ahUj7gEJ2EaVDgXCTmXKvA",
+  "Created": "2025-08-27T23:39:49.7790267Z",
+  "Updated": "2025-08-27T23:39:49.7790267Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

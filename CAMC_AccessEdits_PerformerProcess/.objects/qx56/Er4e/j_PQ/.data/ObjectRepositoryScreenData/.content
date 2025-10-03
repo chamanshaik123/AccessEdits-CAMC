@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="vEO0AMIVjUaE_NKWqQ6oqQ" Reference="7FZokQnjH0eHWoA52xuu7g/j_PQVNV5BkqEguO2Y36JyQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 1024, 728" ContentHash="HM2X8d_bIUekOQruTElTHA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGZSURBVFhHzZIBbsIwDEV7dsTNJnEtlmf7U9c0pc1KtScsDzvf38mY/gPPk2KY51+QnmzTBrABo2Q9f9vEg4R8jKrnu009QEhnKN1v94/Zz7YvBWo2eSchG6Onp27TdxCSGUpHXqAXfvYzNmgU02tEZGoEC+xZwlUJSvmmNROPn0ecDX2kvITOmssGrhgALQbVnExPfUy2CNUMJReu31xh2ujVJejpDCZbuGIAtD1zm9s+e5ZwVYJSvrkyodv7udaIXl5CdTsX3yNWCeUYpm+fvAQ1mb9e4NZfwlUJSvnmykR+AUBf482cmBcgFsSocZihF1DWEvTMPBagaLWET0lQyjevub4CMEfmfjaMkrmdaVGX8AknwKxFyDwWkHldwsQZSms3r7n3EtWYqObk6FE4F5kq1szJ0X9fgNKeF6g5Y8athpnyijlB4Xxk0FvC+v4vel+AEoKjOSPzuoQZE/NvpKm/wMs4mypkfuECUI0Vly0A2Vi/hUsXAK9HtsK3orMAvJaI79Okw9+IsKgse1V0ZoTFGlu9K5imX2366l8GV5jhAAAAAElFTkSuQmCC" Reference="7FZokQnjH0eHWoA52xuu7g/j_PQVNV5BkqEguO2Y36JyQ" Selector="&lt;html app='revenuecycle.exe' isremoteapp='1' title='Cerner Soarian*' /&gt;" Title="Revenue Cycle - United States Base Experience - RevElate - Opened by Sankar, Amaladeepan" Version="V1">
+      <imageRef attrName="InformativeScreenshot" originalValue="4bfd6438732b06470096db92ae544c97.png" xmlns="">0Hs884Pa2D0KnMl1VFCsUpQ</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="NRgn-t7LsECzkjgkTKQGBg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="4ff53b80-f300-44c8-84d7-dddce9e05ffa" DesignTimeRectangle="321, 125, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='2' title='OK' aaname='OK' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='OK' aaname='OK' cls='Button' check:text='OK' /&gt;" Guid="79aa715c-ee5c-4bac-8c91-dc614096a7f0" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' cls='#32770' isremoteapp='1' title='No Demographic Updates' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="467e5b8cb6f78af964adeffb0696d9fd.png" xmlns="">0le8lou8YskiDkY4h9qb1NA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

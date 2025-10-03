@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="qn5u74d3EEe1G0W-hMcdbg" Reference="7FZokQnjH0eHWoA52xuu7g/kelnx5PG7EeaNu-wTYyG2A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 1024, 728" ContentHash="Jg5dMPlnHk-ttc5RQ0f0Ig" FilePath="[in_strApplicatipnPath]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGZSURBVFhHzZIBbsIwDEV7dsTNJnEtlmf7U9c0pc1KtScsDzvf38mY/gPPk2KY51+QnmzTBrABo2Q9f9vEg4R8jKrnu009QEhnKN1v94/Zz7YvBWo2eSchG6Onp27TdxCSGUpHXqAXfvYzNmgU02tEZGoEC+xZwlUJSvmmNROPn0ecDX2kvITOmssGrhgALQbVnExPfUy2CNUMJReu31xh2ujVJejpDCZbuGIAtD1zm9s+e5ZwVYJSvrkyodv7udaIXl5CdTsX3yNWCeUYpm+fvAQ1mb9e4NZfwlUJSvnmykR+AUBf482cmBcgFsSocZihF1DWEvTMPBagaLWET0lQyjevub4CMEfmfjaMkrmdaVGX8AknwKxFyDwWkHldwsQZSms3r7n3EtWYqObk6FE4F5kq1szJ0X9fgNKeF6g5Y8athpnyijlB4Xxk0FvC+v4vel+AEoKjOSPzuoQZE/NvpKm/wMs4mypkfuECUI0Vly0A2Vi/hUsXAK9HtsK3orMAvJaI79Okw9+IsKgse1V0ZoTFGlu9K5imX2366l8GV5jhAAAAAElFTkSuQmCC" Reference="7FZokQnjH0eHWoA52xuu7g/kelnx5PG7EeaNu-wTYyG2A" Selector="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" Title="Revenue Cycle - United States Base Experience - RevElate - Opened by Sankar, Amaladeepan" Version="V1">
+      <imageRef attrName="InformativeScreenshot" originalValue="0054fc758ac3e3d13b23b53409f787a0.png" xmlns="">0Ai0MRogRwkSi2YZO8VwciQ</imageRef>
+    </TargetApp>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData IsVariable="False" Name="in_strApplicatipnPath" />
+    </scg:List>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

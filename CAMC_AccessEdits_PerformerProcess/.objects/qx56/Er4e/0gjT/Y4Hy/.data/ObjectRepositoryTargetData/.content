@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="LXKy61gDPkyVQ4K2hIy3vw" Reference="7FZokQnjH0eHWoA52xuu7g/Y4HyvWzYJUeC9dYPqcZTtw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="7fa726fd-1373-4b22-bed2-42b6781f8536" CvTextArea="266, 193, 131, 12" CvTextArgument="CAMC Admission Errors" CvType="Text" DesignTimeRectangle="267, 193, 130, 14" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tableCol='2' tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='Ellipsis' tag='A' aaname='CAMC Admission Errors' check:text='CAMC Admission Errors' /&gt;" Guid="3b366245-48c4-4315-b63a-2a0bffdd381f" ScopeSelectorArgument="&lt;html app='revenuecycle.exe' htmlwindowname='saml' isremoteapp='1' title='Cerner Soarian [TEST 2025.01]' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="cf5b05a69ce6abe935beaa430bcd7aba.png" xmlns="">0FpSks3xveE2aEv21QDF9Pw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,1059 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="test" this:test.in_strEncounterID="3010597412" this:test.in_intWaitForScreen="100" this:test.in_intPopUpElement="10" this:test.in_strChargeViewerAppPath="C:\Program Files\Cerner\cschargeviewer.exe" this:test.in_strRevElateURL="https://c0na-nprodnstg.asp.cernerworks.com/*" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strEncounterID" Type="InArgument(x:String)" />
+    <x:Property Name="in_intWaitForScreen" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_intPopUpElement" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strChargeViewerAppPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_strRevElateURL" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>test_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="970,9147" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_ExtractDataTable" />
+      <Variable x:TypeArguments="x:String" Name="strAastate">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Worklist screen" sap:VirtualizedContainerService.HintSize="698,1228" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="6bd88543-b95b-40fc-8cd4-9993f164538f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,905" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Task' button on taskbar" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6bd88543-b95b-40fc-8cd4-9993f164538f" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="dc7a8f1a-1639-4a72-94a4-96f6c04d8ddd" ContentHash="SIAuv1ZaxkOQSGM4_8YtVw" CvTextArea="76, 26, 26, 12" CvTextArgument="Task" CvType="Text" DesignTimeRectangle="71, 23, 37, 19" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Task' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Task' role='menu item' automationid='' check:text='Task' /&gt;" Guid="031f78aa-26dd-4cf5-bc95-661c990a5db5" InformativeScreenshot="8e82f500d52f90029a870906c63d6ae2.png" Reference="ycdoyavAlE-BYqdOwPhPXw/6AFZSojnJUqldPaoRC8Ekg" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' cls='SWT_Window0' isremoteapp='1' title='Revenue Cycle - United States Base Experience - RevElate - Opene*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Accounting' option" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6bd88543-b95b-40fc-8cd4-9993f164538f" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="920738b2-5152-47ae-a5dc-c7bcccf665d8" ContentHash="LJ2qqX0PR0icIOjsuW3ADA" CvElementArea="152, 28, 12, 15" CvTextArea="33, 29, 64, 15" CvTextArgument="Accounting" CvType="ArrowButton" DesignTimeRectangle="3, 25, 166, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl name='Task' role='popup menu' /&gt;&lt;ctrl name='Accounting' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Task' role='popup menu' /&gt;&lt;ctrl name='Accounting' role='menu item' automationid='' check:text='Accounting' /&gt;" Guid="135e308c-5b83-478b-95f2-65693f2dae23" InformativeScreenshot="255c32cea01e350a6c3d8e89627ba321.png" Reference="ycdoyavAlE-BYqdOwPhPXw/caISElmIpkO3EzBl0pUVMw" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' cls='#32768' isremoteapp='1' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Charge Viewer' option" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6bd88543-b95b-40fc-8cd4-9993f164538f" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="73fc1b9f-2b92-4a65-8eb1-e558957429da" ContentHash="0F6nO2DlBUOA9ceB7q7BPQ" CvTextArea="34, 29, 78, 15" CvTextArgument="Charge Viewer" CvType="Text" DesignTimeRectangle="3, 25, 257, 22" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;ctrl name='Accounting' role='popup menu' /&gt;&lt;ctrl automationid='148' role='menu item' check:text='Charge Viewer' /&gt;" Guid="2d2252f5-a706-470d-9331-78f99c82cdb5" InformativeScreenshot="2104abf44e5ad3ed67c4d3f521db70a9.png" Reference="ycdoyavAlE-BYqdOwPhPXw/2ettq0PE2kOSZS4RzsSGFQ" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' cls='#32768' isremoteapp='1' idx='*' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log message when charge viewer screen is opened" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Charge Viwer Screen opened&quot;]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 1440, 860" ContentHash="oOUC9QdgHku3QqimBMCYJg" IconBase64="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" InformativeScreenshot="8cb2c7c1baf1c71af61bb102b95e2295.png" Reference="ycdoyavAlE-BYqdOwPhPXw/uhkZxlT7n0SI6xGJN_vF_A" Selector="&lt;html app='revenuecycle.exe' htmlwindowname='saml' isremoteapp='1' title='Cerner Soarian*' /&gt;" Title="Cerner Soarian [PROD 2025.01]" Url="https://c0na-prod.asp.cernerworks.com/*" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NCheckState DisplayName="Check App State 'FIN'" sap:VirtualizedContainerService.HintSize="698,57" sap2010:WorkflowViewState.IdRef="NCheckState_2" IsLoose="True" Version="V4">
+      <uix:NCheckState.IfExists>
+        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message - Charge Viewer found" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Trace" Message="[&quot;Charge viewer screen found&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </uix:NCheckState.IfExists>
+      <uix:NCheckState.IfNotExists>
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message - Charge Viewer screen not found" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Error" Message="[&quot;Charge Viewer screen not found&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <Throw DisplayName="Throw - Charge viewer not found" Exception="[new SystemException(&quot;Charge Viewer not found&quot;)]" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="Throw_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
+        </Sequence>
+      </uix:NCheckState.IfNotExists>
+      <uix:NCheckState.Target>
+        <uix:TargetAnchorable CVScreenId="00ff41e7-4d35-4a05-b604-d6c11c0e9af7" ContentHash="S8iYkYuZEUC3Yc-7QoPcIg" CvElementArea="42, 92, 194, 23" CvType="InputBox" DesignTimeRectangle="45, 95, 171, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='splPersonName' /&gt;&lt;wnd ctrlname='stlpPersonName' /&gt;&lt;wnd ctrlname='cmbPatientName' /&gt;&lt;wnd aaname='FIN:' cls='Edit' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='splPersonName' /&gt;&lt;wnd ctrlname='stlpPersonName' /&gt;&lt;wnd ctrlname='cmbPatientName' /&gt;&lt;wnd aaname='FIN:' cls='Edit' /&gt;" Guid="bb5045df-5519-4ef0-a04d-879665041b4e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK8AAAAUCAYAAAD7n23DAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVGhD7dJBDQAwEASh8296+6uHSUADN4iSl6yf985jWuQlS16y5CVLXrLkJUtesuQlS16y5CVLXrLkJUtesuQlS16yjCVLXrLkJWp7zN1PqGE2iaQAAAAASUVORK5CYII=" InformativeScreenshot="c031cfa2d487007544f52a1582ec981a.png" IsResponsive="True" Reference="ycdoyavAlE-BYqdOwPhPXw/95UyZCjd0EaOCnL1TsuqHA" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+          <uix:TargetAnchorable.Anchors>
+            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+              <uix:Target CVScreenId="00ff41e7-4d35-4a05-b604-d6c11c0e9af7" CvTextArea="15, 94, 23, 12" CvTextArgument="FIN:" CvType="Text" DesignTimeRectangle="13, 92, 29, 17" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='splPersonName' /&gt;&lt;wnd ctrlname='stlpPersonName' /&gt;&lt;wnd ctrlname='lblPersonInfo' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='splPersonName' /&gt;&lt;wnd ctrlname='stlpPersonName' /&gt;&lt;wnd ctrlname='lblPersonInfo' check:text='FIN:' /&gt;" Guid="75b486b7-d5ba-4d53-b7fd-bbfb629906b3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAVCAYAAADID4fUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACrSURBVEhL7ZLRDYMwDAUZ0aP4s1t4kQzCBl0ge7wap64MIrSVKkylnBRC4id0iZlwAYbEdLu38VynsAjYbM8k/kFihhCBNkNmLdUCJtFEyFkhsMr0+UCi85E9CWKUahuN8yVUoAiIC14eKRK1ojCB/Tpi5kDo+3/CT7or4fvxvXOIwI9vwhZa4iabKaHF1haRTAnF6ksLMyUUa4tnDlrzRuIchoQzJJwLSQAP6cUvVIwiDJ0AAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, CV" />
+            </scg:List>
+          </uix:TargetAnchorable.Anchors>
+        </uix:TargetAnchorable>
+      </uix:NCheckState.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NCheckState>
+    <Sequence DisplayName="Sequence - Apply Filter Interface and get the correct interface" sap:VirtualizedContainerService.HintSize="698,5178" sap2010:WorkflowViewState.IdRef="Sequence_21">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="ChargeViewer Screen - Enter the Encounter Id" sap:VirtualizedContainerService.HintSize="664,1521" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="WindowMessages" OpenMode="Never" ScopeGuid="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1198" sap2010:WorkflowViewState.IdRef="Sequence_27">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message - Enter Encounter ID" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Enter the encounter id &quot;+in_strEncounterID]" />
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'FIN' Text" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,286" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Text="[in_strEncounterID + &quot;[k(Enter)]&quot;]" Version="V4">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable CVScreenId="00ff41e7-4d35-4a05-b604-d6c11c0e9af7" ContentHash="S8iYkYuZEUC3Yc-7QoPcIg" CvElementArea="42, 92, 194, 23" CvType="InputBox" DesignTimeRectangle="45, 95, 171, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='splPersonName' /&gt;&lt;wnd ctrlname='stlpPersonName' /&gt;&lt;wnd ctrlname='cmbPatientName' /&gt;&lt;wnd aaname='FIN:' cls='Edit' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='splPersonName' /&gt;&lt;wnd ctrlname='stlpPersonName' /&gt;&lt;wnd ctrlname='cmbPatientName' /&gt;&lt;wnd aaname='FIN:' cls='Edit' /&gt;" Guid="bb5045df-5519-4ef0-a04d-879665041b4e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK8AAAAUCAYAAAD7n23DAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVGhD7dJBDQAwEASh8296+6uHSUADN4iSl6yf985jWuQlS16y5CVLXrLkJUtesuQlS16y5CVLXrLkJUtesuQlS16yjCVLXrLkJWp7zN1PqGE2iaQAAAAASUVORK5CYII=" InformativeScreenshot="c031cfa2d487007544f52a1582ec981a.png" IsResponsive="True" Reference="ycdoyavAlE-BYqdOwPhPXw/95UyZCjd0EaOCnL1TsuqHA" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="00ff41e7-4d35-4a05-b604-d6c11c0e9af7" CvTextArea="15, 94, 23, 12" CvTextArgument="FIN:" CvType="Text" DesignTimeRectangle="13, 92, 29, 17" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='splPersonName' /&gt;&lt;wnd ctrlname='stlpPersonName' /&gt;&lt;wnd ctrlname='lblPersonInfo' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='splPersonName' /&gt;&lt;wnd ctrlname='stlpPersonName' /&gt;&lt;wnd ctrlname='lblPersonInfo' check:text='FIN:' /&gt;" Guid="75b486b7-d5ba-4d53-b7fd-bbfb629906b3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAVCAYAAADID4fUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACrSURBVEhL7ZLRDYMwDAUZ0aP4s1t4kQzCBl0ge7wap64MIrSVKkylnBRC4id0iZlwAYbEdLu38VynsAjYbM8k/kFihhCBNkNmLdUCJtFEyFkhsMr0+UCi85E9CWKUahuN8yVUoAiIC14eKRK1ojCB/Tpi5kDo+3/CT7or4fvxvXOIwI9vwhZa4iabKaHF1haRTAnF6ksLMyUUa4tnDlrzRuIchoQzJJwLSQAP6cUvVIwiDJ0AAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.VerifyOptions>
+                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                  </uix:VerifyExecutionTypeIntoOptions>
+                </uix:NTypeInto.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NCheckState DisplayName="Check App State 'No charges found using …'" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Timeout="[in_intWaitForScreen/10]" Version="V4">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log message when no charges pop up is found" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;No Charges pop up found...&quot;]" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_32" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CVScreenId="e3719bd4-4dc8-4c8f-baff-76eddcf609f6" ContentHash="PqEalYjHOEKs6Ry-DQZc-Q" CvElementArea="160, 99, 74, 23" CvTextArea="188, 105, 17, 11" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="159, 99, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd title='OK' aaname='OK' aastate='focusable' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd title='OK' aaname='OK' aastate='focusable' cls='Button' check:text='OK' /&gt;" Guid="2fa6fcdd-2dc7-4c94-9c9d-67cd3bdd1ad2" InformativeScreenshot="0ff1159bc67b13f8e05d336f6aaa0d4a.png" Reference="ycdoyavAlE-BYqdOwPhPXw/B-2NeRZoDEidp0fNdiDOMw" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' cls='#32770' isremoteapp='1' title='Charge Viewer' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message - No Pop up screen seen" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;No Popup seen&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable CVScreenId="e3719bd4-4dc8-4c8f-baff-76eddcf609f6" ContentHash="S00Nodz4RES7dwFl3y34WA" CvTextArea="11, 55, 206, 11" CvTextArgument="No charges found using selected filters!" CvType="Text" DesignTimeRectangle="12, 54, 207, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlid='65535' title='No charges found using selected filters!' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='65535' title='No charges found using selected filters!' check:text='No charges found using selected filters!' /&gt;" Guid="3e91317d-5276-4911-8e22-6988cdac5df8" InformativeScreenshot="228606591531f3bb5d66f0b57f1b5648.png" Reference="ycdoyavAlE-BYqdOwPhPXw/lPHR12FJDkCyOP5q7MAmRg" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' cls='#32770' isremoteapp='1' title='Charge Viewer' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View' on status" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_18" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="43f53358-ce22-4a89-8d45-3c8b0d6d64f1" ContentHash="Jb9HPOJOYk2gDz2Uh2SGww" CvTextArea="49, 28, 28, 12" CvTextArgument="View" CvType="Text" DesignTimeRectangle="42, 23, 44, 24" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='MainMenu1' /&gt;&lt;ctrl name='View' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='MainMenu1' /&gt;&lt;ctrl name='View' role='menu item' automationid='' check:fulltext='View&amp;#xD;&amp;#xA;Toolbar&amp;#xD;&amp;#xA;Status Bar&amp;#xD;&amp;#xA;Person&amp;#xD;&amp;#xA;Department&amp;#xD;&amp;#xA;Filter Options&amp;#xD;&amp;#xA;Details&amp;#xD;&amp;#xA;Person Information&amp;#xD;&amp;#xA;Color Key&amp;#xD;&amp;#xA;Double-Click Charge&amp;#xD;&amp;#xA;Charge Details&amp;#xD;&amp;#xA;Modify Charge&amp;#xD;&amp;#xA;Options...&amp;#xD;&amp;#xA;Customize...' /&gt;" Guid="696b0275-c6e3-4619-bd9e-6201ba66b165" InformativeScreenshot="b4d7b77b480eefa7914690b49d8cb659.png" Reference="ycdoyavAlE-BYqdOwPhPXw/48Qo7DhrIkWi4yWhEmJndQ" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log message -click on filter options" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Click on Filter Options...&quot;]" />
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filter Options' taskbar" sap:VirtualizedContainerService.HintSize="382,218" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="5fee4422-e7b9-40fc-8bd8-caf6a70e30dc" ContentHash="PGJDSnvmAUG0NXU2bIDKZA" CvTextArea="35, 100, 73, 15" CvTextArgument="Filter Options" CvType="Text" DesignTimeRectangle="0, 96, 184, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='MainMenu1' /&gt;&lt;ctrl name='View' role='menu item' /&gt;&lt;ctrl name='Filter Options' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='MainMenu1' /&gt;&lt;ctrl name='View' role='menu item' /&gt;&lt;ctrl name='Filter Options' role='menu item' automationid='' check:fulltext='Filter Options' /&gt;" Guid="4140918a-90b0-4698-9d8c-41248e277658" InformativeScreenshot="5a675f23261d3f921111923c31089a6f.png" Reference="ycdoyavAlE-BYqdOwPhPXw/1HJ1obGthU2EhNbRUVvKaQ" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="7, 0, 886, 536" ContentHash="ksdCIZ89CEqmWsZ4L3tpwA" FilePath="[in_strChargeViewerAppPath]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAk0SURBVFhHpZZnUJR5Esatu6r9sB/urPJq76qudmV1T3f3jLfWebdnQCQ5ZpEVXQlyiorIOK6CoyhZSRIHGMLgAENScIABBJWkIknSSJQkRgwYMOzH57r/OGNC3ar70MPM8M6/f/300/2+EwB8MtJPaacmp2cFx6nS6uNUqYhJSHkropTJzyLiEsvDouP8tu10mzzeGR+Kcb80RHZBiVlSWmatIukEFIkpSMk4iazTOuQVn8XpknMi8krOis+a3HwkpmYIoNCo2IIDXj5zxzvz3Rj3S21p+URVRo6SE3PFnLS4vBpl1TU4e+Eyzl2sxflLdcbgz/x9aVUNCs9WIu2kFtFK1TOfo8HBUyabfD5eDkO89wUlN6FKOrkSPqi4/II4vKq2EY1t7Wjr7EFP/yCuDQyJ6O4bRGtHN2qb2lBR0yCAGJRBVJpsBEfEVDk6b5vybh5DvPWBks9J1mSPxiarkasrFQdV119BW1cP+q7fwPVbd3B7+B7u3n+Iew9HRAw/eIg79+7j5p1h9A7eQPPVTlRebhCqlFZdQga1Jlyh7CElJr2ZyxDGNyw7V87JtaXnRdV1zW3o7O0XyYdu3xGJ7j98hJHHT/H46SiejD7DoydP8eDRYwwT1M27wxi4cQsd1/oJvAnlNfWiiJyCYhwLi9SNB2F8wz1n2blyTn6psQVXe3rRM3Ad12/exi2q/N6DEUr+RCR+/uIlXrz8FaPPn+MRwTwYeUzKPCDQu+gfuoGr3b24QOoxBHuD2/mL50HZu54QL+x2NhxfxMQV9KPm9k5Rff/QTdygQ0vLyPFaLbQFhSjUFaGouFhEYVExCgp10OYXIDdPK0AHCZjBG1vbUV1HEOSLM5WXkKDWjFpbS+a9B6DS5Fxmt7Ph2ERMzmbrJrOxpNzfJfOsMG3SLMz687/wz78uwaKvJLCcsh4rp9nD9rvtsJ+5B9vmyqHXd2CIvNI7OCTMWXOlRRiYPcEj6xMYnEAqTDQC8JLh6nnUWPpKuriG5Nd3XSO3X8cgA9y9B/P5kt8E0EXgrFgftYGLqGvR42JDs5gQbgUttFsEMM0IwBuOlwzPOUt1gcxTS+ZjegFAcr4LYD17LZysdsJFIoPbygPYu8YHrosPvQa4QwBkXJ6exrYOXG5qFa1gFdhjO3a5uxDEZwKA1ytvOO49jw+br6H1Klrau0QLSs+VQ77fG7aSTUaAw9IAPHn6TARPA0/CQcdAAdBJAGzEboLXd19DE42lQQU2JHvBPyhMSQBfvAIY23Ri2RAl0zZSH1vpIPfd+7Bghhn+8ZcFCPEPx+wv5xsBOPHjUQoB8MQI0EHK9VPbGL69pw8t9LmBFhi3lQvkQsmM9QRgIgB49HiXszxsPpafqdvIA6qUdKp6pgBwWS2Fq5NUAFhRC+wWbYGD2U5stZDB1UqOHQvlAqCdlGMA3pK8D7gQQxvYjFyoOjv3ssEHAoBvKmPub6LloxcAeprjrr4B7HDYLQDYdNFB8TCdseyjJmzv6MLATQKgKejsHRCFXCFFeVUbfJD6UQDqVzNVwYuki/Y8e8B8xkqRcOP87Tji6f8bAG6LMfwgQM47ADyfH1Kgl9zs4eYlEkq+2YhQDwU2mDl9HIBbIAD6xSQwgGgBAXAL3lKAHyYMHmBC9sCVVx7gCvggPtDBYrsAsP9hN9KSsz8M8MoDvAnf8sCV1x44kZlTagTgJxl+mBBTQBfwhXzb5R92XOsTB/XROo4OixcAP32/HQHOUfDYdmRcAL2+U6jGU8D3EjEFNNY83hU0BbyMgsKjAgngSwHAj1H8JMP/4G3FF9bTD1774LUKso1eAsB5tgcaG5ux6u8/vwfQpm8X0GPyv9oD1NaLDXR3pDafLimD45atG9fNdJrrMEuWNcHFVprBPuAHCMN9gA1j2AU8y1wN3+vLyy/S1vMWAPdHRhAfrkLofgXCPRMQI09B/MF06AmcoQ3Vs5rc2pP5RQgOjYa748H7Lj8cajq2SYmfZ7h3TjjmHjXs5RtovBMatmE9TcPYPhhrBUOwEtzfMm2luOux21kZ/o5l58o5OUMzfFlFNdKyTsLfMwJ+W2JxeKkCsvnB2DXPF6FOyaTmjvAJCXuzsWX9TkTGJwoV2Izs1hryAvfOAMGHsikFCD+OEQyPGv/lxPw9y17b1IK8wiKEHI6Fj1MUfMyV8F2cDJ/FSTiyUAnPHyMh/TEQwc5KrP/OZYUAOGquhuumfeKplh+jeGdzK9iQBojWzm6x2xmE3c0wHHqCq66pQ0baaYTKlQiwj4e/hQohSzNxzCwdAaZqAcDhvSgRBxcoEOGcil2mh5+N7YHdabcV1jqEmedAKvHDcXkytLQXGIJ7x/dzXk48SgxSRclKzlRCE5eP4/uSEPTfRAStVCPc4hQU1oWIstSK96Hm2Qgy0yBwSSr8FqvGVFiUBK8FccjyL8HmmdLasT0gS2kLNc9CtFUB4iUliLTIQ/DSDASvTUWgTRLC7DQI2nACoXZpCLFLxXEC5WvilxVDvaoaqhXlSFx+lj6XEIAOUVYMkPsKIGMMwPQ1QMCyZKR76UT/BcAR+7CYGKccHF2SJsjj6OCUlRXIXFOHvPVtKNrQjcKfOqG1vYpcmxbkrGsU/0tffWkcgPEUUCNkeTpi7U9B7a6DWp4Pvw0xov8CgGZ4erCbAodMowUl940PiF1WhOQV55G2+qJImLW2gaIeGWtq30hegaTl56CUnEGsdRGpmI8IS1LHtgDpbmXIkpdB46uDQpoOb7sIyKz99dsXHCiy+XZrJO2TPwkAfnFZ4lF83DVJjAePCTs2wPQEGSkLkZan6XAdJSkVlXLCJPqbsLxMJGbF1I7nkCOtgtb3AnL8yhDjqoHX2uO/7lnq27h1rtzXcdYvCznPeCFeKPFEN8mBofA9ifCxiREgHPL/xAhV/E1TxpSRnETS5iJkuVfglGcVcv0qoPHWIXyrGj62kS9kln7N9nOkiTYznW1o1YpHrk+F8Q1DOP1bmrnX5jAiyN3KAxnGUHnnQLFPDeX+TPhtioZ8TchLmbVfj8McWardbFcP6+9trHi3U0yi+P2bCT4V4mXqZJPfUXxO8ceFf7OYtuZbB+9V0+1TV03fnG4Iy2nrdnHQNTP+j/iG4msKE4ovpk42+cP/ADqPBn/C4tl8AAAAAElFTkSuQmCC" InformativeScreenshot="037e65fe33df8a8a1602cccd973e25fc.png" Reference="ycdoyavAlE-BYqdOwPhPXw/b0wrN4wCcEiJIYi6RLLbHg" Selector="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" Title="Charge Viewer" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="FilterOptions - Interfaced Fiter Applied" sap:VirtualizedContainerService.HintSize="664,1116" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OpenMode="Never" ScopeGuid="acc3e561-1c1a-4f85-96ea-ad3484f18a51" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,793" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Show all' - Check click" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="acc3e561-1c1a-4f85-96ea-ad3484f18a51" Version="V4">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable CVScreenId="289c4788-5ce8-43c2-be07-a71ea88a95ac" ContentHash="GS7uZiHY4kSbXpnkpo_X9Q" CvElementArea="239, 380, 15, 15" CvTextArea="258, 381, 41, 12" CvTextArgument="Show all" CvType="CheckBox" DesignTimeRectangle="240, 379, 66, 19" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_8' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_8' check:fulltext='Show all' /&gt;" Guid="cb0ed88a-122c-43f9-a3e6-9a5b004961c1" InformativeScreenshot="dadf7229e4713465c68297d77ec68e84.png" Reference="ycdoyavAlE-BYqdOwPhPXw/EQYBXjDzDUGGJUeqMP205A" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NCheck.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheck>
+              <uix:NCheck Action="Uncheck" DisplayName="Check/Uncheck 'Show all' - Uncheck click" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="acc3e561-1c1a-4f85-96ea-ad3484f18a51" Version="V4">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable CVScreenId="289c4788-5ce8-43c2-be07-a71ea88a95ac" ContentHash="GS7uZiHY4kSbXpnkpo_X9Q" CvElementArea="239, 380, 15, 15" CvTextArea="258, 381, 41, 12" CvTextArgument="Show all" CvType="CheckBox" DesignTimeRectangle="240, 379, 66, 19" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_8' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_8' check:fulltext='Show all' /&gt;" Guid="cb0ed88a-122c-43f9-a3e6-9a5b004961c1" InformativeScreenshot="dadf7229e4713465c68297d77ec68e84.png" Reference="ycdoyavAlE-BYqdOwPhPXw/EQYBXjDzDUGGJUeqMP205A" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NCheck.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheck>
+              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Interfaced' - Check" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="acc3e561-1c1a-4f85-96ea-ad3484f18a51" Version="V4">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable CVScreenId="2fe354ea-b214-4786-b4e7-55d23b1d590c" ContentHash="OE6DyRrJ30KWGzQCKzCiwg" CvElementArea="24, 177, 15, 15" CvTextArea="43, 178, 49, 12" CvTextArgument="Interfaced" CvType="CheckBox" DesignTimeRectangle="25, 176, 74, 19" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_2' check:fulltext='Interfaced' /&gt;" Guid="9f7ec11b-d1a2-4341-9c3d-8ccea12cf670" InformativeScreenshot="7207837f9c78a82ebbb7b544b6a0218a.png" Reference="ycdoyavAlE-BYqdOwPhPXw/lqIcstbLJEGF4f5gdd1V7g" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="2fe354ea-b214-4786-b4e7-55d23b1d590c" CvTextArea="43, 178, 49, 12" CvTextArgument="Interfaced" CvType="Text" DesignTimeRectangle="43, 178, 49, 12" ElementType="Text" Guid="0fec2520-1da0-47e4-8b0d-e5b207d63ed5" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheck.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheck>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Apply' button" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="acc3e561-1c1a-4f85-96ea-ad3484f18a51" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="12c99cff-21ce-4aeb-9eb4-310c99e062ae" ContentHash="Qi4l77dvkUet8LWoGK-79g" CvElementArea="597, 453, 93, 27" CvTextArea="625, 461, 32, 14" CvTextArgument="Apply" CvType="Button" DesignTimeRectangle="597, 453, 93, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='stlpApplyOK' /&gt;&lt;wnd ctrlname='cmdApply' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='stlpApplyOK' /&gt;&lt;wnd ctrlname='cmdApply' check:text='&amp;amp;Apply' /&gt;" Guid="1a85a0a0-2ec3-4807-ac46-d081452989ae" InformativeScreenshot="309fe6b44c04883881d1be83758f37d1.png" Reference="ycdoyavAlE-BYqdOwPhPXw/tgF7ojJcwUq9bYPCHjRViA" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ok' button" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="acc3e561-1c1a-4f85-96ea-ad3484f18a51" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="2fe354ea-b214-4786-b4e7-55d23b1d590c" ContentHash="bd3OLYloLUi6sEnc2Ft6EA" CvElementArea="401, 453, 92, 26" CvTextArea="437, 461, 19, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="401, 453, 93, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='stlpApplyOK' /&gt;&lt;wnd ctrlname='cmdOk' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='stlpApplyOK' /&gt;&lt;wnd ctrlname='cmdOk' check:text='&amp;amp;OK' /&gt;" Guid="d71c15dc-9014-481f-b4a6-eb1098f6ad73" InformativeScreenshot="4aebf4f40be87a44b46ad10873f0fdf4.png" Reference="ycdoyavAlE-BYqdOwPhPXw/areNx7DQ1kqRCYQ7MLbsrg" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message - Interfaced is checked" sap:VirtualizedContainerService.HintSize="382,50" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Interfaced filter is added&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="372, 183, 696, 486" ContentHash="YaVxUgTySUGX2yxFZXa33Q" FilePath="[in_strChargeViewerAppPath]" IconBase64="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" InformativeScreenshot="33c2a1a838f69bd57fa8cbaaebf2e35e.png" Reference="ycdoyavAlE-BYqdOwPhPXw/N4Yp61Q--U6ke_AH7eLFAQ" Selector="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" Title="Filter Options" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="ChargeViewer Screen - Extract Table Information" sap:VirtualizedContainerService.HintSize="664,2449" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="WindowMessages" OpenMode="Never" ScopeGuid="b1d68cf0-923d-40ad-aa46-9378ce944f96" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="630,2135" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_ExtractDataTable]" DisplayName="Extract Table Data - Get the Details" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='CV' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' ReferenceIdx='0' Name='Column1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Status' ReferenceIdx='1' Name='Status'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Description' ReferenceIdx='2' Name='Description'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='FIN Number' ReferenceIdx='3' Name='FIN Number'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table table_source='CV' /&gt;" sap:VirtualizedContainerService.HintSize="596,57" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="b1d68cf0-923d-40ad-aa46-9378ce944f96" Version="V4">
+                <uix:NExtractData.Target>
+                  <uix:TargetAnchorable CVScreenId="b895911a-9c48-4769-aab7-056a7722b714" CvElementArea="5, 316, 873, 154" CvType="Table" DesignTimeRectangle="5, 316, 873, 154" DesignTimeScaleFactor="1" ElementType="Table" Guid="c95b665e-af05-4361-a767-4116364304ea" InformativeScreenshot="85f4f01892ff56a89eb8a29f79bef0cc.png" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive" />
+                </uix:NExtractData.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NExtractData>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '1st elememt'" sap:VirtualizedContainerService.HintSize="596,225" sap2010:WorkflowViewState.IdRef="NClick_33" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b1d68cf0-923d-40ad-aa46-9378ce944f96" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="9f09ba81-4629-44f1-a0b6-df74af3b2f18" ContentHash="TBj7t67TakSCV7DyI7ZFfg" CvTextArea="44, 340, 55, 12" CvTextArgument="Interfaced" CvType="Text" DesignTimeRectangle="44, 340, 55, 12" DesignTimeScaleFactor="1" ElementType="Text" Guid="176db7cd-b391-4380-9f2a-1dc97858d42f" InformativeScreenshot="a8e58cf3b47304e6c8da0c6d6e14e672.png" Reference="ycdoyavAlE-BYqdOwPhPXw/bbJJ4Q-DK0etxAoAaYddLg" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="9f09ba81-4629-44f1-a0b6-df74af3b2f18" CvTextArea="41, 323, 35, 12" CvTextArgument="Status" CvType="Text" DesignTimeRectangle="41, 323, 35, 12" ElementType="Text" Guid="06b58b71-cce4-44df-9be5-803b4cc1df67" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[strAastate.ToString.ToLower&lt;&gt;&quot;focusable&quot;]" DisplayName="While - Correct Interfaced in Found" sap:VirtualizedContainerService.HintSize="596,858" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                <ui:InterruptibleWhile.Body>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,712" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="aastate" DisplayName="Get Attribute 'Toggle from Interface btn'" sap:VirtualizedContainerService.HintSize="382,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" Result="[strAastate]" ScopeIdentifier="b1d68cf0-923d-40ad-aa46-9378ce944f96" Version="V4">
+                      <uix:NGetAttributeGeneric.Target>
+                        <uix:TargetAnchorable CVScreenId="5e5814e3-a0fe-435a-99d7-1f813d09b85a" ContentHash="pXXEmRFKd0O0nGffBmvg5w" CvElementArea="149, 50, 15, 17" CvType="ArrowButton" DesignTimeRectangle="146, 48, 24, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='Toolbar1' /&gt;&lt;ctrl name='Toggle from Interfaced/Pending to Suspended' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='Toolbar1' /&gt;&lt;ctrl name='Toggle from Interfaced/Pending to Suspended' role='push button' automationid='' check:fulltext='Toggle from Interfaced/Pending to Suspended' /&gt;" Guid="c7899847-d922-4b10-a205-8f8aa672acd1" InformativeScreenshot="690068ad7d4b369fa3ae05fdaff8833b.png" Reference="ycdoyavAlE-BYqdOwPhPXw/4acV9Hb5xUq9bJBV7F6nHQ" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NGetAttributeGeneric.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NGetAttributeGeneric>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - Downkey" sap:VirtualizedContainerService.HintSize="382,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(down)][u(hk)]" Version="V4">
+                      <uix:NKeyboardShortcuts.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NKeyboardShortcuts.VerifyOptions>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                    <ui:LogMessage DisplayName="Log Message - Log AA state " sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Current State is &quot;+strAastate.ToString]" />
+                  </Sequence>
+                </ui:InterruptibleWhile.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InterruptibleWhile>
+              <ui:RetryScope DisplayName="Retry Scope - until toggle window found" sap:VirtualizedContainerService.HintSize="596,715" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Toggle from Interface btn'" sap:VirtualizedContainerService.HintSize="382,216" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" Version="V4">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable CVScreenId="5e5814e3-a0fe-435a-99d7-1f813d09b85a" ContentHash="pXXEmRFKd0O0nGffBmvg5w" CvElementArea="149, 50, 15, 17" CvType="ArrowButton" DesignTimeRectangle="146, 48, 24, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='Toolbar1' /&gt;&lt;ctrl name='Toggle from Interfaced/Pending to Suspended' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='Toolbar1' /&gt;&lt;ctrl name='Toggle from Interfaced/Pending to Suspended' role='push button' automationid='' check:fulltext='Toggle from Interfaced/Pending to Suspended' /&gt;" Guid="c7899847-d922-4b10-a205-8f8aa672acd1" InformativeScreenshot="690068ad7d4b369fa3ae05fdaff8833b.png" Reference="ycdoyavAlE-BYqdOwPhPXw/4acV9Hb5xUq9bJBV7F6nHQ" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
+                      </uix:NClick>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean">
+                    <uix:NCheckState DisplayName="Check App State 'Toggle Charge'" sap:VirtualizedContainerService.HintSize="554,247" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="b1d68cf0-923d-40ad-aa46-9378ce944f96" Timeout="[in_intPopUpElement]" Version="V4">
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable ContentHash="MTmzD1aX7UChUx7BHW5eHA" DesignTimeRectangle="0, 0, 367, 152" DesignTimeScaleFactor="1" Guid="ee756740-a46a-4d81-a135-a003382634b7" InformativeScreenshot="fe164bdbfb85639fee255e52c4a29397.png" Reference="ycdoyavAlE-BYqdOwPhPXw/8Uq1m6XMsUKSumPaYvOf2Q" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' cls='#32770' isremoteapp='1' title='Toggle Charge' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.FuzzySelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </uix:TargetAnchorable.FuzzySelectorArgument>
+                        </uix:TargetAnchorable>
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                  </ActivityFunc>
+                </ui:RetryScope.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RetryScope>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="[in_intPopUpElement/2]" DisplayName="Click 'Yes' button" sap:VirtualizedContainerService.HintSize="596,218" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="a809d7ff-c166-4219-876e-7cae751503c4" ContentHash="ScigTp-liEyS3Hu9ri9ZvA" CvElementArea="193, 119, 74, 22" CvTextArea="220, 125, 17, 11" CvTextArgument="Yes" CvType="Button" DesignTimeRectangle="192, 119, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Yes' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Yes' check:text='&amp;amp;Yes' /&gt;" Guid="0056b752-8c57-4f64-9dd3-4f8e367a60a5" InformativeScreenshot="c31d2c9fbb55dbfaa97b59c67ce4cdbc.png" Reference="ycdoyavAlE-BYqdOwPhPXw/Ifqf1a4l9UeDAlAL-ZfZyA" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' cls='#32770' isremoteapp='1' title='Toggle Charge' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="7, 0, 886, 536" ContentHash="ksdCIZ89CEqmWsZ4L3tpwA" FilePath="[in_strChargeViewerAppPath]" IconBase64="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" InformativeScreenshot="037e65fe33df8a8a1602cccd973e25fc.png" Reference="ycdoyavAlE-BYqdOwPhPXw/b0wrN4wCcEiJIYi6RLLbHg" Selector="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" Title="Charge Viewer" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Sequence - Apply Filter and get Suspended" sap:VirtualizedContainerService.HintSize="698,2661" sap2010:WorkflowViewState.IdRef="Sequence_28">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="ChargeViewer Screen" sap:VirtualizedContainerService.HintSize="450,828" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="WindowMessages" OpenMode="Never" ScopeGuid="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,505" sap2010:WorkflowViewState.IdRef="Sequence_31">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View Toolbar Status Bar…'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_22" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="43f53358-ce22-4a89-8d45-3c8b0d6d64f1" ContentHash="Jb9HPOJOYk2gDz2Uh2SGww" CvTextArea="49, 28, 28, 12" CvTextArgument="View" CvType="Text" DesignTimeRectangle="42, 23, 44, 24" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='MainMenu1' /&gt;&lt;ctrl name='View' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='MainMenu1' /&gt;&lt;ctrl name='View' role='menu item' automationid='' check:fulltext='View&amp;#xD;&amp;#xA;Toolbar&amp;#xD;&amp;#xA;Status Bar&amp;#xD;&amp;#xA;Person&amp;#xD;&amp;#xA;Department&amp;#xD;&amp;#xA;Filter Options&amp;#xD;&amp;#xA;Details&amp;#xD;&amp;#xA;Person Information&amp;#xD;&amp;#xA;Color Key&amp;#xD;&amp;#xA;Double-Click Charge&amp;#xD;&amp;#xA;Charge Details&amp;#xD;&amp;#xA;Modify Charge&amp;#xD;&amp;#xA;Options...&amp;#xD;&amp;#xA;Customize...' /&gt;" Guid="696b0275-c6e3-4619-bd9e-6201ba66b165" InformativeScreenshot="b4d7b77b480eefa7914690b49d8cb659.png" Reference="ycdoyavAlE-BYqdOwPhPXw/48Qo7DhrIkWi4yWhEmJndQ" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filter Options'" sap:VirtualizedContainerService.HintSize="382,218" sap2010:WorkflowViewState.IdRef="NClick_23" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="5fee4422-e7b9-40fc-8bd8-caf6a70e30dc" ContentHash="PGJDSnvmAUG0NXU2bIDKZA" CvTextArea="35, 100, 73, 15" CvTextArgument="Filter Options" CvType="Text" DesignTimeRectangle="0, 96, 184, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='MainMenu1' /&gt;&lt;ctrl name='View' role='menu item' /&gt;&lt;ctrl name='Filter Options' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='MainMenu1' /&gt;&lt;ctrl name='View' role='menu item' /&gt;&lt;ctrl name='Filter Options' role='menu item' automationid='' check:fulltext='Filter Options' /&gt;" Guid="4140918a-90b0-4698-9d8c-41248e277658" InformativeScreenshot="5a675f23261d3f921111923c31089a6f.png" Reference="ycdoyavAlE-BYqdOwPhPXw/1HJ1obGthU2EhNbRUVvKaQ" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="7, 0, 886, 536" ContentHash="ksdCIZ89CEqmWsZ4L3tpwA" FilePath="[in_strChargeViewerAppPath]" IconBase64="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" InformativeScreenshot="037e65fe33df8a8a1602cccd973e25fc.png" Reference="ycdoyavAlE-BYqdOwPhPXw/b0wrN4wCcEiJIYi6RLLbHg" Selector="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" Title="Charge Viewer" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="FilterOptions" sap:VirtualizedContainerService.HintSize="450,1174" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="WindowMessages" OpenMode="Never" ScopeGuid="c5cdeabc-bbf0-45b2-bc0d-a864e56c95e3" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,851" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Show all' - Check" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="NCheck_4" ScopeIdentifier="c5cdeabc-bbf0-45b2-bc0d-a864e56c95e3" Version="V4">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable CVScreenId="289c4788-5ce8-43c2-be07-a71ea88a95ac" ContentHash="GS7uZiHY4kSbXpnkpo_X9Q" CvElementArea="239, 380, 15, 15" CvTextArea="258, 381, 41, 12" CvTextArgument="Show all" CvType="CheckBox" DesignTimeRectangle="240, 379, 66, 19" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_8' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_8' check:fulltext='Show all' /&gt;" Guid="cb0ed88a-122c-43f9-a3e6-9a5b004961c1" InformativeScreenshot="dadf7229e4713465c68297d77ec68e84.png" Reference="ycdoyavAlE-BYqdOwPhPXw/EQYBXjDzDUGGJUeqMP205A" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NCheck.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheck>
+              <uix:NCheck Action="Uncheck" DisplayName="Check/Uncheck 'Show all' - Uncheck" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="NCheck_5" ScopeIdentifier="c5cdeabc-bbf0-45b2-bc0d-a864e56c95e3" Version="V4">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable CVScreenId="289c4788-5ce8-43c2-be07-a71ea88a95ac" ContentHash="GS7uZiHY4kSbXpnkpo_X9Q" CvElementArea="239, 380, 15, 15" CvTextArea="258, 381, 41, 12" CvTextArgument="Show all" CvType="CheckBox" DesignTimeRectangle="240, 379, 66, 19" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_8' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_8' check:fulltext='Show all' /&gt;" Guid="cb0ed88a-122c-43f9-a3e6-9a5b004961c1" InformativeScreenshot="dadf7229e4713465c68297d77ec68e84.png" Reference="ycdoyavAlE-BYqdOwPhPXw/EQYBXjDzDUGGJUeqMP205A" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NCheck.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheck>
+              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Suspended' - Check" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="NCheck_6" ScopeIdentifier="c5cdeabc-bbf0-45b2-bc0d-a864e56c95e3" Version="V4">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable CVScreenId="3665c93c-3141-488e-8493-f2c5f483ddd3" ContentHash="9JuhR93jW0WiEhvuyXZpow" CvElementArea="239, 148, 15, 15" CvTextArea="258, 149, 55, 14" CvTextArgument="Suspended" CvType="CheckBox" DesignTimeRectangle="240, 147, 80, 19" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='sPanelMain' /&gt;&lt;wnd ctrlname='stlpServiceDate' /&gt;&lt;wnd ctrlname='fmeProcessFlag' /&gt;&lt;wnd ctrlname='stplProcessFlag' /&gt;&lt;wnd ctrlname='_chkProcessFlg_1' check:fulltext='Suspended' /&gt;" Guid="a998913f-b3ed-42d5-958d-54eae12c6abc" InformativeScreenshot="a55c4ade655bccbbe52590032f27a14a.png" Reference="ycdoyavAlE-BYqdOwPhPXw/gWWvU_0JmkaGmwaDyyjcLg" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="3665c93c-3141-488e-8493-f2c5f483ddd3" CvTextArea="258, 149, 55, 14" CvTextArgument="Suspended" CvType="Text" DesignTimeRectangle="258, 149, 55, 14" ElementType="Text" Guid="331db3eb-c490-4aa0-ad56-e2d8a6e96e4a" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheck.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheck>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Apply'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_26" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c5cdeabc-bbf0-45b2-bc0d-a864e56c95e3" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="12c99cff-21ce-4aeb-9eb4-310c99e062ae" ContentHash="Qi4l77dvkUet8LWoGK-79g" CvElementArea="597, 453, 93, 27" CvTextArea="625, 461, 32, 14" CvTextArgument="Apply" CvType="Button" DesignTimeRectangle="597, 453, 93, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='stlpApplyOK' /&gt;&lt;wnd ctrlname='cmdApply' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='stlpApplyOK' /&gt;&lt;wnd ctrlname='cmdApply' check:text='&amp;amp;Apply' /&gt;" Guid="1a85a0a0-2ec3-4807-ac46-d081452989ae" InformativeScreenshot="309fe6b44c04883881d1be83758f37d1.png" Reference="ycdoyavAlE-BYqdOwPhPXw/tgF7ojJcwUq9bYPCHjRViA" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;OK'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_27" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c5cdeabc-bbf0-45b2-bc0d-a864e56c95e3" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="2fe354ea-b214-4786-b4e7-55d23b1d590c" ContentHash="bd3OLYloLUi6sEnc2Ft6EA" CvElementArea="401, 453, 92, 26" CvTextArea="437, 461, 19, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="401, 453, 93, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='stlpApplyOK' /&gt;&lt;wnd ctrlname='cmdOk' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='stlpApplyOK' /&gt;&lt;wnd ctrlname='cmdOk' check:text='&amp;amp;OK' /&gt;" Guid="d71c15dc-9014-481f-b4a6-eb1098f6ad73" InformativeScreenshot="4aebf4f40be87a44b46ad10873f0fdf4.png" Reference="ycdoyavAlE-BYqdOwPhPXw/areNx7DQ1kqRCYQ7MLbsrg" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message - Suspended Filter Applied" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Suspended Filter Applied&quot;]" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="372, 183, 696, 486" ContentHash="YaVxUgTySUGX2yxFZXa33Q" FilePath="[in_strChargeViewerAppPath]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAXqSURBVFhH1ZdJTNVXFIcfcdU2aZMuumwaV+7qpkm7a9Kkw7KGhQPigBM4YJnEohgHFBQRBxzAoAKiggwqiuKAIFEEEaoRUAYFZBRUEFAZ/qfnu14otLVV25e0J7l5T7ncc85vOPfi+k+HiHjk5eVNunjxondubm70yZMnszMzM8uOHj3akJKS0n3w4MH+hISE/j179vRs27atKTo6umLTpk05GzZsiF2/fr2Prs89PT0n2OPePF68ePHlgwcP4oqKihq1AEcTS3Z2tvB59uxZuXz5sly/fl0qKirk9u3bUlNTI/fv3zersrJSiouLzd64uDgnNDS0be3atYmbN2/+Ro/2eJXhNfHs2bOvWlpaivRwR7uUvXv3inYoycnJkpaWJidOnBBFQi5duiRanJSUlMjNmzdN0traWmlubpaOjg7Rc2RoaEgBfBUUGhsb6wQHB/+i6Pxg042PR48ehVy7dm1o165dotCJwim7d++W/fv3S1JSklBQVlaWnDlzRpSScQXcuXPHFNDU1CTt7e3y5MkT6evrG1cEoajKqlWrHF0xmvI3NPQAT6BeuXKlhIeHi/IoW7dulZ07d8q+fftEuZYjR46I8i+nT5+WCxcuyJUrV0wB5eXlBoG6ujp5+PChQeDp06fy/PlzGR4elsHBQfMdVPr7+82/IyMjnaVLl/5k07tc2lEBiUNCQkwBCpMoZ8AmKjBJTEyUw4cPy/HjxyUnJ0fOnz//hwLq6+sNBYqk9PT0yMuXL03XfIJGd3e3PH782KADSl5eXvU2vculB5YoPxIYGChhYWGiojEoxMTEICRDw4gOEJeiJYWFhaMFVFVVGQGqfqSrq0t6e3sN/CCggjbdk7izs9Ms9syYMaPNpne5VFjB8Ozr62tQWL169SgK27dvNzQcOnRIjh07ZoR47ty5cQVUV1cbfltbW00ioCYGBgbMd7onKejwHUpnz54dbdO7XKrSD1TZ5eptAQnWmjVrRlFAjNCQmppqhIgVCwoKpLS0dLSAhoYGAy0JSEyMdM//jSxcNGfOnNLly5e/b9O/Cq18Yn5+ficc0zFOQA8qGCNG7EiBGRkZ5pCxs+Du3bvS2Nho4AV+x3FMAdCABkgMTQh76tSpbVrApzbt+FAhfa9FDN27d89YLT093cwCrDmCAjTgBN1nELh165YRIOonEQWAAJ9YE81s3LhRZs6cKVOmTBnQ5F/bdH8eevDPSodpATthLSC+ceOGUT5DiEUB0MA8uHr1qkEEapiYIIiO/Pz8ZP78+TJ37lyZPn26oxrzt2leH5rXQy2XgcDgEPGgbiCmIyzH8OHnUIAlQQqRgtKWLVuMi1asWCHKsxE23WsRSTbF34d286EeWMlwQUSoG5Ex85l6CA9EKITOcQY2pYCoqCijnaCgIFmyZAlqp/uyRYsWvWePf7NQWCep/7sRFgMEKigIMSE8CigrKzN04AystWPHDmNfvYBk2bJl4uPjw8DpUBQ+s8e+Xejc//HAgQPDeBmR4XUUj/AogIVYcQbDivuD7gMCAmThwoUkH9DOuQXfPdT7EXDMPAcFaOAKHlsAzmBko3a6X7x4scyaNctRCgLtMe8eOjIn6GMjF9Vjs5E7H/gpABFyTzAxGV4ID9UrAqn66399/79pqLg+XrduXR0CZNphSwRIAQwl+Gdso/wFCxYgvAoV3vhJ909DOZ6sHfZiSRyBEEGBoYTvsZ5Vfad+TrS/9u+GwuylRTjYEh2AwqlTp4z6EZ5C76jovrPb3ROaqJkpiSC5FeGea1xHrGjyPqXg7R+hbxN6U1Zy2TAlsSMI8GbAdirALrvNfaEFFPPCwZZMRGY/FGj3os+sJrvNfaFKz2Mocc3+vgD1f7Xd5r7Qh2saLuDKHVsAl46uMrvNfaFP6lC8T4wtAA3Mmzev0G5zX+h1+4mKrZ3rmbGMCHkxQYHOgFy7zb2hb8Uv/P39G3kt8bdCfHy8oUALSLdb3B8REREfadfheulUeXt7D06bNq1dHx7f2h//X8Ll+hWz1FudrRQAuAAAAABJRU5ErkJggg==" InformativeScreenshot="33c2a1a838f69bd57fa8cbaaebf2e35e.png" Reference="ycdoyavAlE-BYqdOwPhPXw/N4Yp61Q--U6ke_AH7eLFAQ" Selector="&lt;wnd app='cschargeviewer.exe' ctrlname='frmFilterOptions' isremoteapp='1' /&gt;" Title="Filter Options" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="ChargeViewer Screen - Release Suspended " sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="WindowMessages" OpenMode="Never" ScopeGuid="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,746" sap2010:WorkflowViewState.IdRef="Sequence_35">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Suspended 1st rec'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_28" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="0df29914-0f6f-4839-8094-35ecc287167e" ContentHash="w1W6r9XD2UWM28MxKMexTg" CvTextArea="44, 340, 64, 14" CvTextArgument="Suspended" CvType="Text" DesignTimeRectangle="44, 340, 64, 14" DesignTimeScaleFactor="1" ElementType="Text" Guid="7606ef3b-ab06-4b75-ba1d-0cdc18076cd5" InformativeScreenshot="ba138723ca0a71b22a9f316297b61510.png" Reference="ycdoyavAlE-BYqdOwPhPXw/IkyZfQgnVEGpenm5uBue5g" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="0df29914-0f6f-4839-8094-35ecc287167e" CvTextArea="41, 323, 35, 12" CvTextArgument="Status" CvType="Text" DesignTimeRectangle="41, 323, 35, 12" ElementType="Text" Guid="ee3f385c-9e83-4e3a-b4d5-6fae5f73bd72" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NCheckState DisplayName="Check App State 'Release Charge(s)'" sap:VirtualizedContainerService.HintSize="954,459" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="a2c91ad3-4238-44a0-af23-ceaf774538f3" Version="V4">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Release Charge(s)'" sap:VirtualizedContainerService.HintSize="416,50" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CVScreenId="19834c26-c44b-4b54-9e76-28accf4f4583" ContentHash="9yp9GPETLUS7aT6rUy_IFQ" CvElementArea="34, 56, 23, 22" CvType="Icon" DesignTimeRectangle="33, 56, 24, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='Toolbar1' /&gt;&lt;ctrl name='Release Charge(s)' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='Toolbar1' /&gt;&lt;ctrl name='Release Charge(s)' role='push button' automationid='' check:fulltext='Release Charge(s)' /&gt;" Guid="d3636476-f7ad-4b8a-9cfe-630a42c360e2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE2SURBVEhLvZAHbsNADAT5/1foR+nFVc29JVEewHhPIUDqLgfJjo/QgFgKuwuJsizjlBAnHqpP35wSqo4N3xpTWB6+OCVU7D85BhFZw0CNDK0p331wDAScH0dfLd4QvQsxomW0xhIt3hBe4Xx7csAoWxiidZ7Op9nmyCF00CWEMoFXOF0fDG2A+2tGA9EYrcUr6HyarPYc49pCL697GC93Bl2oNRCN0Vq8gs6n0WLLMa4t9PK6h/d6Y9CBWmNEy0k0isQPdD69VWsOAaNsYYiWMtw0XuFruXLooEuQHKDz6aVYcgyYMVh/6d+TG2jt70LP+YJj6EBnCGgMVsgPbOH8fIzQFrT01abwfDOFT7OaYyBgqNaF+p17/zit+NaYwodJySmh+3HBKfG+8G6U/zumsGkaTkfDPzxqCP0lWp92AAAAAElFTkSuQmCC" InformativeScreenshot="105ee64ccf890b710d1a48d9e4e53816.png" Reference="ycdoyavAlE-BYqdOwPhPXw/c6K2JPCe8Eu9XnvmD33zSQ" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw DisplayName="Throw - Suspended Record wasnt found" Exception="[new SystemException(&quot;Suspended record wasnt found&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable CVScreenId="19834c26-c44b-4b54-9e76-28accf4f4583" ContentHash="9yp9GPETLUS7aT6rUy_IFQ" CvElementArea="34, 56, 23, 22" CvType="Icon" DesignTimeRectangle="33, 56, 24, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='Toolbar1' /&gt;&lt;ctrl name='Release Charge(s)' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stlpMain' /&gt;&lt;wnd ctrlname='Toolbar1' /&gt;&lt;ctrl name='Release Charge(s)' role='push button' automationid='' check:fulltext='Release Charge(s)' /&gt;" Guid="d3636476-f7ad-4b8a-9cfe-630a42c360e2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE2SURBVEhLvZAHbsNADAT5/1foR+nFVc29JVEewHhPIUDqLgfJjo/QgFgKuwuJsizjlBAnHqpP35wSqo4N3xpTWB6+OCVU7D85BhFZw0CNDK0p331wDAScH0dfLd4QvQsxomW0xhIt3hBe4Xx7csAoWxiidZ7Op9nmyCF00CWEMoFXOF0fDG2A+2tGA9EYrcUr6HyarPYc49pCL697GC93Bl2oNRCN0Vq8gs6n0WLLMa4t9PK6h/d6Y9CBWmNEy0k0isQPdD69VWsOAaNsYYiWMtw0XuFruXLooEuQHKDz6aVYcgyYMVh/6d+TG2jt70LP+YJj6EBnCGgMVsgPbOH8fIzQFrT01abwfDOFT7OaYyBgqNaF+p17/zit+NaYwodJySmh+3HBKfG+8G6U/zumsGkaTkfDPzxqCP0lWp92AAAAAElFTkSuQmCC" InformativeScreenshot="105ee64ccf890b710d1a48d9e4e53816.png" Reference="ycdoyavAlE-BYqdOwPhPXw/c6K2JPCe8Eu9XnvmD33zSQ" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="7, 0, 886, 536" ContentHash="ksdCIZ89CEqmWsZ4L3tpwA" FilePath="[in_strChargeViewerAppPath]" IconBase64="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" InformativeScreenshot="037e65fe33df8a8a1602cccd973e25fc.png" Reference="ycdoyavAlE-BYqdOwPhPXw/b0wrN4wCcEiJIYi6RLLbHg" Selector="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" Title="Charge Viewer" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Suspended Charge Release Screen " sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" ScopeGuid="3ae3dbec-4722-4a7a-b902-179e3037cd97" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,630" sap2010:WorkflowViewState.IdRef="Sequence_36">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message - Released screen found" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Release Screen found...&quot;]" />
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Release All'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_31" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3ae3dbec-4722-4a7a-b902-179e3037cd97" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="0270ac9a-726e-45e9-8371-99acc42b84b7" ContentHash="ll7yfgpuGUa_8lU5Y1RmAA" CvElementArea="239, 328, 135, 27" CvTextArea="273, 336, 63, 12" CvTextArgument="Release All" CvType="Button" DesignTimeRectangle="239, 328, 134, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='stplMain' /&gt;&lt;wnd ctrlname='sflpButton' /&gt;&lt;wnd ctrlname='cmdRelease' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='stplMain' /&gt;&lt;wnd ctrlname='sflpButton' /&gt;&lt;wnd ctrlname='cmdRelease' check:text='&amp;amp;Release All' /&gt;" Guid="57e73e79-207d-4cef-9296-b803f4bf8346" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAfCAYAAAA4LFWUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVHhe7ZYxjoMwEEW5E1Kk3CVFihxiy3RUOQVtOs5Am5Q5QQ6w1RYpZj02xmNjk1ktWpHNH+kVGIPNzMN2RQiEIiAKQhUQBaGKSJTq4wbAiIyJKJf7F90/H+DNeSpK7iHwfkAUoAKiABUQBaiAKEAFRAEqIApQ8SKidLSrKqombGl3zvVP4ecP1Gbv/THng5338Srb5fxWNFfBC4mSJvdBvU26JqnrSX67d5LXjcwtRFmIvCjl9pS1JH+Yb2ME35yoj9ohygLkhUhXFL6uo23Jzz9O/my/jW8f7o1//o2O4l6974b2ufclXE9UW0HS75Hzi+e6Fl5IlFCksVgm6a1P9lCEcN3ZwrozjEj+bL8E09c/1zdbqrwc5hmej33mB+/jd/gth7egsP1AlIXg5MUriltNQpstZCKSlckWIyR/vh/fN6tDsqrYMVgIvt4czCrTUa8aN8zXrUjiG3j+dnXha4iyEFNRGPlXRn/8hESUUj9bPNNvHGc6bs8rBstkZOBVY35cgRctwr8boixEXpTor7SFMH38+YC3h9LWU+jnih4Ome7s4cb1Qrh7ZnXwks6OG8gJFUQX84Mov4GTlxHFtoei9GdTtHHbkAfROPnlfiyAKejwx9f7IMr0nhSq9D6POwin8gTRIQr4J0AUoAKiABUQBaiAKEAFRAEqnooCgEdGJAoCUQqIglAFREEogugb6/W9f+3pDnkAAAAASUVORK5CYII=" InformativeScreenshot="53baca61f63e1491c111a19c551a4409.png" Reference="ycdoyavAlE-BYqdOwPhPXw/v_YolQnOZ0mwNaaikSZc_Q" ScopeSelectorArgument="&lt;wnd app='cschargeviewer.exe' ctrlname='frmSuspCharges' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message - charged Released" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Charges Released&quot;]" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="52, 76, 796, 383" ContentHash="sPAB0MaggUGoTi_BlDMF9w" FilePath="[in_strChargeViewerAppPath]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAk0SURBVFhHpZZnUJR5Esatu6r9sB/urPJq76qudmV1T3f3jLfWebdnQCQ5ZpEVXQlyiorIOK6CoyhZSRIHGMLgAENScIABBJWkIknSSJQkRgwYMOzH57r/OGNC3ar70MPM8M6/f/300/2+EwB8MtJPaacmp2cFx6nS6uNUqYhJSHkropTJzyLiEsvDouP8tu10mzzeGR+Kcb80RHZBiVlSWmatIukEFIkpSMk4iazTOuQVn8XpknMi8krOis+a3HwkpmYIoNCo2IIDXj5zxzvz3Rj3S21p+URVRo6SE3PFnLS4vBpl1TU4e+Eyzl2sxflLdcbgz/x9aVUNCs9WIu2kFtFK1TOfo8HBUyabfD5eDkO89wUlN6FKOrkSPqi4/II4vKq2EY1t7Wjr7EFP/yCuDQyJ6O4bRGtHN2qb2lBR0yCAGJRBVJpsBEfEVDk6b5vybh5DvPWBks9J1mSPxiarkasrFQdV119BW1cP+q7fwPVbd3B7+B7u3n+Iew9HRAw/eIg79+7j5p1h9A7eQPPVTlRebhCqlFZdQga1Jlyh7CElJr2ZyxDGNyw7V87JtaXnRdV1zW3o7O0XyYdu3xGJ7j98hJHHT/H46SiejD7DoydP8eDRYwwT1M27wxi4cQsd1/oJvAnlNfWiiJyCYhwLi9SNB2F8wz1n2blyTn6psQVXe3rRM3Ad12/exi2q/N6DEUr+RCR+/uIlXrz8FaPPn+MRwTwYeUzKPCDQu+gfuoGr3b24QOoxBHuD2/mL50HZu54QL+x2NhxfxMQV9KPm9k5Rff/QTdygQ0vLyPFaLbQFhSjUFaGouFhEYVExCgp10OYXIDdPK0AHCZjBG1vbUV1HEOSLM5WXkKDWjFpbS+a9B6DS5Fxmt7Ph2ERMzmbrJrOxpNzfJfOsMG3SLMz687/wz78uwaKvJLCcsh4rp9nD9rvtsJ+5B9vmyqHXd2CIvNI7OCTMWXOlRRiYPcEj6xMYnEAqTDQC8JLh6nnUWPpKuriG5Nd3XSO3X8cgA9y9B/P5kt8E0EXgrFgftYGLqGvR42JDs5gQbgUttFsEMM0IwBuOlwzPOUt1gcxTS+ZjegFAcr4LYD17LZysdsJFIoPbygPYu8YHrosPvQa4QwBkXJ6exrYOXG5qFa1gFdhjO3a5uxDEZwKA1ytvOO49jw+br6H1Klrau0QLSs+VQ77fG7aSTUaAw9IAPHn6TARPA0/CQcdAAdBJAGzEboLXd19DE42lQQU2JHvBPyhMSQBfvAIY23Ri2RAl0zZSH1vpIPfd+7Bghhn+8ZcFCPEPx+wv5xsBOPHjUQoB8MQI0EHK9VPbGL69pw8t9LmBFhi3lQvkQsmM9QRgIgB49HiXszxsPpafqdvIA6qUdKp6pgBwWS2Fq5NUAFhRC+wWbYGD2U5stZDB1UqOHQvlAqCdlGMA3pK8D7gQQxvYjFyoOjv3ssEHAoBvKmPub6LloxcAeprjrr4B7HDYLQDYdNFB8TCdseyjJmzv6MLATQKgKejsHRCFXCFFeVUbfJD6UQDqVzNVwYuki/Y8e8B8xkqRcOP87Tji6f8bAG6LMfwgQM47ADyfH1Kgl9zs4eYlEkq+2YhQDwU2mDl9HIBbIAD6xSQwgGgBAXAL3lKAHyYMHmBC9sCVVx7gCvggPtDBYrsAsP9hN9KSsz8M8MoDvAnf8sCV1x44kZlTagTgJxl+mBBTQBfwhXzb5R92XOsTB/XROo4OixcAP32/HQHOUfDYdmRcAL2+U6jGU8D3EjEFNNY83hU0BbyMgsKjAgngSwHAj1H8JMP/4G3FF9bTD1774LUKso1eAsB5tgcaG5ux6u8/vwfQpm8X0GPyv9oD1NaLDXR3pDafLimD45atG9fNdJrrMEuWNcHFVprBPuAHCMN9gA1j2AU8y1wN3+vLyy/S1vMWAPdHRhAfrkLofgXCPRMQI09B/MF06AmcoQ3Vs5rc2pP5RQgOjYa748H7Lj8cajq2SYmfZ7h3TjjmHjXs5RtovBMatmE9TcPYPhhrBUOwEtzfMm2luOux21kZ/o5l58o5OUMzfFlFNdKyTsLfMwJ+W2JxeKkCsvnB2DXPF6FOyaTmjvAJCXuzsWX9TkTGJwoV2Izs1hryAvfOAMGHsikFCD+OEQyPGv/lxPw9y17b1IK8wiKEHI6Fj1MUfMyV8F2cDJ/FSTiyUAnPHyMh/TEQwc5KrP/OZYUAOGquhuumfeKplh+jeGdzK9iQBojWzm6x2xmE3c0wHHqCq66pQ0baaYTKlQiwj4e/hQohSzNxzCwdAaZqAcDhvSgRBxcoEOGcil2mh5+N7YHdabcV1jqEmedAKvHDcXkytLQXGIJ7x/dzXk48SgxSRclKzlRCE5eP4/uSEPTfRAStVCPc4hQU1oWIstSK96Hm2Qgy0yBwSSr8FqvGVFiUBK8FccjyL8HmmdLasT0gS2kLNc9CtFUB4iUliLTIQ/DSDASvTUWgTRLC7DQI2nACoXZpCLFLxXEC5WvilxVDvaoaqhXlSFx+lj6XEIAOUVYMkPsKIGMMwPQ1QMCyZKR76UT/BcAR+7CYGKccHF2SJsjj6OCUlRXIXFOHvPVtKNrQjcKfOqG1vYpcmxbkrGsU/0tffWkcgPEUUCNkeTpi7U9B7a6DWp4Pvw0xov8CgGZ4erCbAodMowUl940PiF1WhOQV55G2+qJImLW2gaIeGWtq30hegaTl56CUnEGsdRGpmI8IS1LHtgDpbmXIkpdB46uDQpoOb7sIyKz99dsXHCiy+XZrJO2TPwkAfnFZ4lF83DVJjAePCTs2wPQEGSkLkZan6XAdJSkVlXLCJPqbsLxMJGbF1I7nkCOtgtb3AnL8yhDjqoHX2uO/7lnq27h1rtzXcdYvCznPeCFeKPFEN8mBofA9ifCxiREgHPL/xAhV/E1TxpSRnETS5iJkuVfglGcVcv0qoPHWIXyrGj62kS9kln7N9nOkiTYznW1o1YpHrk+F8Q1DOP1bmrnX5jAiyN3KAxnGUHnnQLFPDeX+TPhtioZ8TchLmbVfj8McWardbFcP6+9trHi3U0yi+P2bCT4V4mXqZJPfUXxO8ceFf7OYtuZbB+9V0+1TV03fnG4Iy2nrdnHQNTP+j/iG4msKE4ovpk42+cP/ADqPBn/C4tl8AAAAAElFTkSuQmCC" InformativeScreenshot="9a375c8238e25660c4215e33beb74fd0.png" Reference="ycdoyavAlE-BYqdOwPhPXw/-2SFnZphQE6PPicm6UaWGQ" Selector="&lt;wnd app='cschargeviewer.exe' ctrlname='frmSuspCharges' isremoteapp='1' /&gt;" Title="Suspended Charge Release" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <ui:LogMessage DisplayName="Log Message - Close Charge Viewer Screen" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Close Charge Viewer Screen&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="ChargeViewer Screen - close" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="NApplicationCard_12" OpenMode="Never" ScopeGuid="4358991e-a084-42f7-9246-1111e3100b58" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,91" sap2010:WorkflowViewState.IdRef="Sequence_39">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="7, 0, 886, 536" ContentHash="ksdCIZ89CEqmWsZ4L3tpwA" FilePath="[in_strChargeViewerAppPath]" IconBase64="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" InformativeScreenshot="037e65fe33df8a8a1602cccd973e25fc.png" Reference="ycdoyavAlE-BYqdOwPhPXw/b0wrN4wCcEiJIYi6RLLbHg" Selector="&lt;wnd app='cschargeviewer.exe' ctrlname='frmApplication' isremoteapp='1' /&gt;" Title="Charge Viewer" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

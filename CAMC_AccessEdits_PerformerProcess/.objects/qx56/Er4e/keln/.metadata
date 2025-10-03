@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Revenue Cycle - United States Base Experience(1)",
+  "Type": "Screen",
+  "Id": "kelnx5PG7EeaNu-wTYyG2A",
+  "Reference": "7FZokQnjH0eHWoA52xuu7g/kelnx5PG7EeaNu-wTYyG2A",
+  "ParentRef": "7FZokQnjH0eHWoA52xuu7g/Er4eGw9Qa0abn4WQe4xfyw",
+  "Created": "2025-08-27T22:48:46.756075Z",
+  "Updated": "2025-08-27T22:48:46.756075Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

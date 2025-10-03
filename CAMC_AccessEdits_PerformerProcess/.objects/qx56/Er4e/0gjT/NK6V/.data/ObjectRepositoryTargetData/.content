@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="3jC2tKryD0GrAG-2vdUFbQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="5fe04f67-1656-4940-9653-3130f6756c0c" DesignTimeRectangle="7, 308, 39, 38" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd cls='ToolbarWindow32' idx='6' /&gt;&lt;ctrl name='RevElate' role='check box' /&gt;" FuzzySelectorArgument="&lt;wnd cls='ToolbarWindow32' /&gt;&lt;ctrl name='RevElate' role='check box' automationid='' check:fulltext='RevElate' /&gt;" Guid="e1b53af1-b2d4-430e-ad35-d74726c59806" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' cls='SWT_Window0' isremoteapp='1' title='Revenue Cycle - United States Base Experience - RevElate - Opene*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f3388c46e3bb86e047b1f221716031ee.png" xmlns="">0xNBdoDlx8kih6-rsk_bfzA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

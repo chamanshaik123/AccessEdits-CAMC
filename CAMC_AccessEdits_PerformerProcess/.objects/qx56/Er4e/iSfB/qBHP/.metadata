@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Insurance Primary tab",
+  "Type": "Element",
+  "Id": "qBHPtycRPECXITg1T_cDzQ",
+  "Reference": "7FZokQnjH0eHWoA52xuu7g/qBHPtycRPECXITg1T_cDzQ",
+  "ParentRef": "7FZokQnjH0eHWoA52xuu7g/iSfBM_s5ykyIyEXTxh8aWg",
+  "Created": "2025-08-27T22:24:59.477825Z",
+  "Updated": "2025-08-27T22:24:59.477825Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

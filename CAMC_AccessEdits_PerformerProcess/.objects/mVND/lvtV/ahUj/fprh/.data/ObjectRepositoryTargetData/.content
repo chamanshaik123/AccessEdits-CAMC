@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="hZkBTGYN2ECJDBkpJW06Ew" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="1eea6de8-87b3-4f6d-b78f-dbb464e681a8" CvElementArea="323, 177, 74, 22" CvTextArea="351, 183, 17, 11" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="322, 177, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='2' title='OK' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='OK' check:text='OK' /&gt;" Guid="bfca6f1f-6d52-4e71-a524-a19d5be0b98d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAbCAYAAAA9K9JnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD5SURBVGhD7dbBDcIwDIXh7JRtMgm3rJJVMgXnbpANTK3QNK5SQbEIRnqHX2Dq06dAcKUUQp8FPEXAUyTw3O2OXiS8xDBYRjLhJYbnwrIs6BDwFAFPEfAUAU+RbbwUyDnX8jF3zxMF5ynmOqew7oTUPf9+ZvFy9CtYoNQ+yxR9D9ThMfJkOM4oHkPtp6qVI/kGuuHxa488L5t4Aqmvnr6Q+H3F8yPkSf0h3obFeKPfwnnZxDtcBq3Tr+1vTp9RvPMLYz9lHRpfGD5SbrtzMovHVcALf1UmA5rGsx7wFAFPEfAUvY2HzhNeYhgsI5nw6gd0LeApAt7HFXoAb+ZrYvlHDM8AAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' cls='#32770' isremoteapp='1' title='Out of Network Health Plan' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c5786d08e59203f38378c098f3a77d18.png" xmlns="">0g97odyFbBkSt5CV8g0NGqQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

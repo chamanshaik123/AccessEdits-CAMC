@@ -1,0 +1,443 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="PMOffice_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_intWaitforAppsElement" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strCernerCredentialName" Type="InArgument(x:String)" />
+    <x:Property Name="in_strOrchestartorFolder" Type="InArgument(x:String)" />
+    <x:Property Name="in_intWaitForPage" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strCitrixURL" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCernerAppPath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>PMOffice_Login_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Preconditions - Citrix Application should be logged in&#xA;Process - 1. Launches PMOffice applications and enters cerner credentials (if prompted)&#xA;PostConditions - PMOffice is luanched and available for operation" DisplayName="PMOffice_Login" sap:VirtualizedContainerService.HintSize="1450,3533" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strModuleName" />
+      <Variable x:TypeArguments="x:Boolean" Name="boAlreadyLoggedIn" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message login to module started" sap:VirtualizedContainerService.HintSize="1450,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strModuleName+&quot; started&quot;]" />
+    <Assign DisplayName="Assign Already Logged in Initilised" sap:VirtualizedContainerService.HintSize="1450,57" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[boAlreadyLoggedIn]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Access CernerWorks Application" sap:VirtualizedContainerService.HintSize="1450,1712" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="632b02c1-be3d-40e6-896c-02c4b59f1b22" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,1463" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Apps label'" sap:VirtualizedContainerService.HintSize="954,704" sap2010:WorkflowViewState.IdRef="NCheckState_1" IsLoose="True" Timeout="[in_intWaitforAppsElement]" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message Click on All Tab" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;All tab found&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'All (*)'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="632b02c1-be3d-40e6-896c-02c4b59f1b22" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="camcwvctx.cernerworkswan.com/Citrix/MOCKweb" CVScreenId="1d68f3b6-c670-45e1-a477-c8145d2504e5" ContentHash="8g4NMIeuL0C9aDn7xMC2IA" CvTextArea="25, 178, 30, 10" CvTextArgument="All (*)" CvType="Text" DesignTimeRectangle="30, 183, 65, 33" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FullSelectorArgument="&lt;webctrl id='allAppsFilterBtn' tag='A' /&gt;" Guid="c568baa2-7bcd-4e14-a5dd-8fe39c59440b" InformativeScreenshot="a54435b824b047c04d52ca3dd00eae7c.png" Reference="ycdoyavAlE-BYqdOwPhPXw/OS9EAxWlBECL-EA39zVg8A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Welcome to CernerWorks!' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,352" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message - citrix logged in" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Apps page not found...citrix not logged in&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <Throw DisplayName="throw - Citrix login exception" Exception="[New Exception(&quot;Citrix is not logged in&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="camcwvctx.cernerworkswan.com/Citrix/MOCKweb" CVScreenId="1d68f3b6-c670-45e1-a477-c8145d2504e5" ContentHash="D0zTJEMwqkOP_p_v-B_KRA" DesignTimeRectangle="26, 142, 127, 26" DesignTimeScaleFactor="0.6666666865348816" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Apps' parentid='home-screen' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='home-screen' tag='DIV' type='' class='toolbar-header _ctxstxt_AllApps' /&gt;" Guid="1b18755e-9960-4e4b-a52c-d6a343099dcb" ImageBase64="" InformativeScreenshot="599a0c029a11e1d8e8bfdc0e57eb0581.png" Reference="O0er_LE8dkaqhrZRI0NQ6w/lMalw11dN0uCkfTk7sU5gw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Welcome to CernerWorks!' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'M0570 PMOffice'" sap:VirtualizedContainerService.HintSize="954,697" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="632b02c1-be3d-40e6-896c-02c4b59f1b22" Timeout="[in_intWaitforAppsElement]" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message - PM Office App Found" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;PM Office App found...Opening it&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'PMOffice'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="632b02c1-be3d-40e6-896c-02c4b59f1b22" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="camcwvctx.cernerworkswan.com/Citrix/PRODweb" CVScreenId="02eefb04-c984-410e-8e37-a5f62e141503" ContentHash="CNvVI2cAy0CPjLazxDqJfg" CvElementArea="793, 384, 122, 137" CvTextArea="818, 472, 75, 11" CvTextArgument="P0570 PMOffice" CvType="Button" DesignTimeRectangle="795, 386, 119, 133" DesignTimeScaleFactor="0.800000011920929" ElementType="ListItem" FuzzySelectorArgument="&lt;webctrl type='' tag='LI' class='storeapp added' aaname='' /&gt;" Guid="2f519d02-9139-434a-9786-420aca5fabc7" InformativeScreenshot="f20db26363a1b94c11018ae26eb4fe6b.png" Reference="ycdoyavAlE-BYqdOwPhPXw/bCCC61TVUEKrLC5Ze6PPSA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Welcome to CernerWorks!' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="02eefb04-c984-410e-8e37-a5f62e141503" CvElementArea="793, 384, 122, 137" CvTextArea="818, 472, 75, 11" CvTextArgument="P0570 PMOffice" CvType="Button" DesignTimeRectangle="796, 472, 119, 13" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='P0570 PMOffice' class='storeapp-name' parentid='home-screen' tag='P' type='' check:innerText='P0570 PMOffice' /&gt;" Guid="20c1decc-a7db-4062-93fa-53ddf6eeaf09" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,352" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message - PM Office APP not found" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;M0570 PM office App not found&quot;]" />
+                  <Throw DisplayName="Throw - PM office App not found" Exception="[new Exception(&quot;M0570 PM office App not found&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="camcwvctx.cernerworkswan.com/Citrix/PRODweb" CVScreenId="02eefb04-c984-410e-8e37-a5f62e141503" ContentHash="CNvVI2cAy0CPjLazxDqJfg" CvElementArea="793, 384, 122, 137" CvTextArea="818, 472, 75, 11" CvTextArgument="P0570 PMOffice" CvType="Button" DesignTimeRectangle="795, 386, 119, 133" DesignTimeScaleFactor="0.800000011920929" ElementType="ListItem" FuzzySelectorArgument="&lt;webctrl type='' tag='LI' class='storeapp added' aaname='' /&gt;" Guid="2f519d02-9139-434a-9786-420aca5fabc7" InformativeScreenshot="f20db26363a1b94c11018ae26eb4fe6b.png" Reference="ycdoyavAlE-BYqdOwPhPXw/bCCC61TVUEKrLC5Ze6PPSA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Welcome to CernerWorks!' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="02eefb04-c984-410e-8e37-a5f62e141503" CvElementArea="793, 384, 122, 137" CvTextArea="818, 472, 75, 11" CvTextArgument="P0570 PMOffice" CvType="Button" DesignTimeRectangle="796, 472, 119, 13" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='P0570 PMOffice' class='storeapp-name' parentid='home-screen' tag='P' type='' check:innerText='P0570 PMOffice' /&gt;" Guid="20c1decc-a7db-4062-93fa-53ddf6eeaf09" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1296, 776" BrowserType="Chrome" ContentHash="oYiuFYCL-0C81dLVyi6iaw" IconBase64="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" InformativeScreenshot="2043055a78172f635d577f882af63419.jpg" Reference="ycdoyavAlE-BYqdOwPhPXw/lSQLrUFXukGPtSoJPLxaiw" Selector="&lt;html app='chrome.exe' title='Welcome to CernerWorks!' /&gt;" Title="Welcome to CernerWorks!" Url="[in_strCitrixURL]" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <Pick DisplayName="Pick - Check different screen" sap:VirtualizedContainerService.HintSize="1450,585" sap2010:WorkflowViewState.IdRef="Pick_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <PickBranch DisplayName="PickBranch - Login to Application" sap:VirtualizedContainerService.HintSize="424,506" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <PickBranch.Trigger>
+          <Delay DisplayName="Delay execution for a specified duration" Duration="[TimeSpan.FromSeconds(in_intWaitForPage-3)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+        </PickBranch.Trigger>
+      </PickBranch>
+      <PickBranch DisplayName="PickBranch - Task Tab found" sap:VirtualizedContainerService.HintSize="644,506" sap2010:WorkflowViewState.IdRef="PickBranch_4">
+        <PickBranch.Trigger>
+          <uix:NCheckState DisplayName="Check App State 'Task tab'" sap:VirtualizedContainerService.HintSize="554,247" sap2010:WorkflowViewState.IdRef="NCheckState_6" IsLoose="True" Timeout="[in_intWaitForPage]" Version="V4">
+            <uix:NCheckState.Target>
+              <uix:TargetAnchorable CVScreenId="b7663d9b-15f3-49f5-8b98-929270ee61e7" ContentHash="ME7vZ5xE0kq7hbXFHyau0w" CvElementArea="1, 22, 40, 25" CvTextArea="7, 28, 26, 12" CvTextArgument="Task" CvType="Button" DesignTimeRectangle="0, 23, 42, 24" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd ctrlname='tbMenu' /&gt;&lt;ctrl name='Task' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tbMenu' /&gt;&lt;ctrl name='Task' role='menu item' automationid='' check:fulltext='Task&amp;#xD;&amp;#xA;Change User...&amp;#xD;&amp;#xA;Change Password...&amp;#xD;&amp;#xA;Lock Manager&amp;#xD;&amp;#xA;Recover Conversation&amp;#xD;&amp;#xA;Location History Search&amp;#xD;&amp;#xA;Scheduling Appointment Book&amp;#xD;&amp;#xA;Find a Bed&amp;#xD;&amp;#xA;Documents&amp;#xD;&amp;#xA;Conversation Launcher&amp;#xD;&amp;#xA;Print&amp;#xD;&amp;#xA;Print Screen&amp;#xD;&amp;#xA;Suspend&amp;#xD;&amp;#xA;Exit' /&gt;" Guid="0d889dd2-36ae-49d7-b7cf-d35a8e187801" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAcCAYAAAAa/l2sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJBSURBVFhH1ZhdTxNBFIb3h/kHvPRv+BeMwYhpDSjKR2mtta6E0CogHwmJ2MQIBSShSb0TUCjGO91twaIsH3o87+zO2nWnLbQpTk/ytDvnndk+s9nMRQ2jcJ26CmVTZ8irK1evaUttGdVTIoAgPv5SO+AlHYHx/eQ3AQSxsSntgJd0BB0VHnk22TYh4QP+AJ0QHjZftE1D4cF0VjtCwvvHvwh0Qvjhk0zbwEs6goDwQGpCyULJO1P+Kbu4oJyvZoU+0gGtT6uy+oSEK84ZAQT3kuNNyNM27dP6pCprRmtr4SUdwaUKiyfcrnD56IxAq8Lzu977gdpdFr2+xDy9K3s9ru3cmFgrhfsSy3wfLm9+IxoK342bTVgSwmvP1dmWzHKfiXaW6uRztMab2crVZvWBl3QEhn10SuAiwqvZp34v+npPPEW33CyafU8Wj6zCbGAthC2WRT86yvPOAbykI7iw8CZVfOGIENujuViaIrFZWi27WUSM05QqVMQ2NhfT3lqW5Tm081YppyIkbP08IYDgznCqCW98YTFe5PPOLlIS15kiyweFQXKjQtbGtL92JZOimU8sLnq191YDL+kIWhLOTzwW496hKcrb4iGyeIk+2G7W+6r24C7RzBDm/xX21/FmH4lM9VsuYeEffMGcR/j2YPLSEcKeIwgI33qQ0I6WhHsG4v+NkPC3w2MCCG7eH9UOeElHEBC+0T+iHSHhr4cOAZ2FpSPoPmHTNAkg0BXpCMT/Eo7j4KsryoDsl3K1S6jSHwaWyvNbM0+UAAAAAElFTkSuQmCC" InformativeScreenshot="13d9c425df4872bf0261da3ff86a77f0.png" Reference="ycdoyavAlE-BYqdOwPhPXw/fhupreFEQ0Wdru5m2BxK3g" ScopeSelectorArgument="&lt;wnd app='pmoffice.exe' ctrlname='frmMain' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+            </uix:NCheckState.Target>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NCheckState>
+        </PickBranch.Trigger>
+        <Sequence sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message - PM Office already Logged IN" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;PMO office App already logged in&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <Assign DisplayName="Assign - already logged in" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[boAlreadyLoggedIn]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </PickBranch>
+    </Pick>
+    <If Condition="[not boAlreadyLoggedIn]" DisplayName="If not already logged in" sap:VirtualizedContainerService.HintSize="1450,926" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1416,676" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Pick DisplayName="Pick -Error/Success Logged In" sap:VirtualizedContainerService.HintSize="1382,616" sap2010:WorkflowViewState.IdRef="Pick_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <PickBranch sap:VirtualizedContainerService.HintSize="644,546" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <PickBranch.Trigger>
+                <uix:NCheckState DisplayName="Check App State 'Failure pop up OK button'" sap:VirtualizedContainerService.HintSize="554,287" sap2010:WorkflowViewState.IdRef="NCheckState_5" IsLoose="True" Timeout="[in_intWaitForPage]" Version="V4">
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable CVScreenId="1b9fc361-0a96-4b04-ab41-558f4f828732" ContentHash="QJ2QkM1FfkaE7Q2UrCLRPw" CvElementArea="174, 120, 74, 22" CvTextArea="203, 125, 17, 11" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="174, 119, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='2' title='OK' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='OK' check:text='OK' /&gt;" Guid="159ecbdb-664b-476d-8d59-3705f2a8c585" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAbCAYAAAA9K9JnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVGhD7dbdDYQgEEZReqIbmqEVGrAISqEDOph1QsRxV9foJDgm38ONP/h0Moqu1kroXsBTBDxFG7xpmtBJ0usHr5SCDgKeIuApAp4i4CkCniK7eCmQc67nYxbriYLzFHO7TmF+JiSxPiaTeDn6GSxQ6vcyRS+BBB4jPwDHGcRjqHWqejmS76ALHh8l8tjs4W2QZG36QuLzhuf3kAf2MrwFi/H2voVjs4f3tRn0Dl/b56bPIN7xhrFOmUDjDcNHyv3ZcZnE4xrghV+VBwDN4r0h4CkCniLgKQKeolM89D/ptcFD1wKeIuDdrtIHFPTZcXU7kyUAAAAASUVORK5CYII=" InformativeScreenshot="140d4ecf807001d0787b2acf49939a9f.png" Reference="O0er_LE8dkaqhrZRI0NQ6w/w_L4qzp94EG4jJsW_jlQUg" ScopeSelectorArgument="&lt;wnd app='cernserver.exe' cls='#32770' isremoteapp='1' title='Log on failure' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                  </uix:NCheckState.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheckState>
+              </PickBranch.Trigger>
+              <Sequence sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message - Error Loggin into PM Office" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Error while logging into PMO office  application&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+                <Throw DisplayName="Throw - Error Loggin into PM Office" Exception="[new Exception(&quot;Error while logging into PMO office  application&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
+              </Sequence>
+            </PickBranch>
+            <PickBranch DisplayName="PickBranch - Access Management Office login success" sap:VirtualizedContainerService.HintSize="644,546" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <PickBranch.Trigger>
+                <uix:NCheckState DisplayName="Check App State 'App already login'" sap:VirtualizedContainerService.HintSize="554,287" sap2010:WorkflowViewState.IdRef="NCheckState_4" IsLoose="True" Timeout="[in_intWaitForPage]" Version="V4">
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable CVScreenId="b7663d9b-15f3-49f5-8b98-929270ee61e7" ContentHash="ME7vZ5xE0kq7hbXFHyau0w" CvElementArea="1, 22, 40, 25" CvTextArea="7, 28, 26, 12" CvTextArgument="Task" CvType="Button" DesignTimeRectangle="0, 23, 42, 24" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd ctrlname='tbMenu' /&gt;&lt;ctrl name='Task' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tbMenu' /&gt;&lt;ctrl name='Task' role='menu item' automationid='' check:fulltext='Task&amp;#xD;&amp;#xA;Change User...&amp;#xD;&amp;#xA;Change Password...&amp;#xD;&amp;#xA;Lock Manager&amp;#xD;&amp;#xA;Recover Conversation&amp;#xD;&amp;#xA;Location History Search&amp;#xD;&amp;#xA;Scheduling Appointment Book&amp;#xD;&amp;#xA;Find a Bed&amp;#xD;&amp;#xA;Documents&amp;#xD;&amp;#xA;Conversation Launcher&amp;#xD;&amp;#xA;Print&amp;#xD;&amp;#xA;Print Screen&amp;#xD;&amp;#xA;Suspend&amp;#xD;&amp;#xA;Exit' /&gt;" Guid="0d889dd2-36ae-49d7-b7cf-d35a8e187801" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAcCAYAAAAa/l2sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJBSURBVFhH1ZhdTxNBFIb3h/kHvPRv+BeMwYhpDSjKR2mtta6E0CogHwmJ2MQIBSShSb0TUCjGO91twaIsH3o87+zO2nWnLbQpTk/ytDvnndk+s9nMRQ2jcJ26CmVTZ8irK1evaUttGdVTIoAgPv5SO+AlHYHx/eQ3AQSxsSntgJd0BB0VHnk22TYh4QP+AJ0QHjZftE1D4cF0VjtCwvvHvwh0Qvjhk0zbwEs6goDwQGpCyULJO1P+Kbu4oJyvZoU+0gGtT6uy+oSEK84ZAQT3kuNNyNM27dP6pCprRmtr4SUdwaUKiyfcrnD56IxAq8Lzu977gdpdFr2+xDy9K3s9ru3cmFgrhfsSy3wfLm9+IxoK342bTVgSwmvP1dmWzHKfiXaW6uRztMab2crVZvWBl3QEhn10SuAiwqvZp34v+npPPEW33CyafU8Wj6zCbGAthC2WRT86yvPOAbykI7iw8CZVfOGIENujuViaIrFZWi27WUSM05QqVMQ2NhfT3lqW5Tm081YppyIkbP08IYDgznCqCW98YTFe5PPOLlIS15kiyweFQXKjQtbGtL92JZOimU8sLnq191YDL+kIWhLOTzwW496hKcrb4iGyeIk+2G7W+6r24C7RzBDm/xX21/FmH4lM9VsuYeEffMGcR/j2YPLSEcKeIwgI33qQ0I6WhHsG4v+NkPC3w2MCCG7eH9UOeElHEBC+0T+iHSHhr4cOAZ2FpSPoPmHTNAkg0BXpCMT/Eo7j4KsryoDsl3K1S6jSHwaWyvNbM0+UAAAAAElFTkSuQmCC" InformativeScreenshot="13d9c425df4872bf0261da3ff86a77f0.png" Reference="ycdoyavAlE-BYqdOwPhPXw/fhupreFEQ0Wdru5m2BxK3g" ScopeSelectorArgument="&lt;wnd app='pmoffice.exe' ctrlname='frmMain' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                  </uix:NCheckState.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheckState>
+              </PickBranch.Trigger>
+              <ui:LogMessage DisplayName="Log Message - Access Management App Logout" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Access Management Office app logged in successfully&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </PickBranch>
+          </Pick>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

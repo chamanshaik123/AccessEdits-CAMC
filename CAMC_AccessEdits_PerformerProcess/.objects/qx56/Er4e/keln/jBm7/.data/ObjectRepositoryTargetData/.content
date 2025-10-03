@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gSSxrJeT6kSl_Jx1grBrvw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="7508f650-e34d-4ae5-9ead-31db8b96cc96" DesignTimeRectangle="1, 3, 411, 28" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;uia automationid='TitleBar' role='title bar' /&gt;" FuzzySelectorArgument="&lt;uia automationid='TitleBar' role='title bar' check:text='Out of Network Health Plan' /&gt;" Guid="83e931f1-7cc4-419e-a006-68026f111033" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' cls='#32770' isremoteapp='1' title='Out of Network Health Plan' /&gt;" SearchSteps="Selector, FuzzySelector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="d9a313df65ef9d8c96c9df9de6214110.png" xmlns="">0H0fLOiGMV0KqS3g1_0tZ2Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "CAMC Admission Errors",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "NK6VYDLp-0-9AaN9TUaXMw",
+  "Reference": "7FZokQnjH0eHWoA52xuu7g/NK6VYDLp-0-9AaN9TUaXMw",
+  "ParentRef": "7FZokQnjH0eHWoA52xuu7g/0gjTZ6rYe0uXY08wHNU5IQ",
+  "Created": "2025-08-26T11:51:10.4571572Z",
+  "Updated": "2025-08-26T11:51:10.4571572Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

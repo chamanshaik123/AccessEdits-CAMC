@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Patient Accounting",
+  "Type": "Screen",
+  "Id": "iSfBM_s5ykyIyEXTxh8aWg",
+  "Reference": "7FZokQnjH0eHWoA52xuu7g/iSfBM_s5ykyIyEXTxh8aWg",
+  "ParentRef": "7FZokQnjH0eHWoA52xuu7g/Er4eGw9Qa0abn4WQe4xfyw",
+  "Created": "2025-08-27T22:24:59.202305Z",
+  "Updated": "2025-08-27T22:24:59.202305Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

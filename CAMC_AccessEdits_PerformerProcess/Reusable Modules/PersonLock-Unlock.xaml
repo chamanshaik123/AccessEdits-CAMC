@@ -1,0 +1,210 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="PersonLock_Unlock" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="PersonLock_Unlock_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.WorkflowEvents.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="PersonLock_Unlock" sap:VirtualizedContainerService.HintSize="970,2231" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Person Lock" sap:VirtualizedContainerService.HintSize="450,816" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="35d4bc81-b35f-44de-b411-526bf20e2cf2" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,453" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message - Click View Locks" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Click View Lock&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;View Locks'" sap:VirtualizedContainerService.HintSize="382,218" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="a08ae9a0-39bd-4b90-8d6e-3efac9777a9a" ContentHash="ZEuA_ye8uEGI1pgeWl4umA" CvElementArea="279, 141, 93, 27" CvTextArea="295, 148, 57, 12" CvTextArgument="View Locks" CvType="Button" DesignTimeRectangle="279, 141, 93, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='tlpMain' /&gt;&lt;wnd ctrlname='tlpButtons' /&gt;&lt;wnd ctrlname='cmdViewLocks' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tlpMain' /&gt;&lt;wnd ctrlname='tlpButtons' /&gt;&lt;wnd ctrlname='cmdViewLocks' check:text='&amp;amp;View Locks' /&gt;" Guid="29542705-1cf1-421e-83fc-cc16ae7de304" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAAfCAYAAAD3LqMSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVGhD7ZXRsYQgDEXpiW5ohlZoYIuglO3ADngJEjYg+nZGxexMPs6MBohyLwlmWZakPIuaIAA1QQCNCa/XS5kE131jwvv9Vm5GTRCAmiAANUEAaoIA1AQBqAkCuNmEmLw1yYUuHn2y1qfIY2e5Iucd//UFt1dC9DZZH7cx567dsJpwwGZjWB02+cjmXIGacEQnOm2UbxieHbQtYwDr1rk4blwKOUdIbvjM2BOwy13XRchDcWOhZUK1NjlwvMThHau3zu0q+ywTTGhbUn2uG94xiceDywLku+VA7G2c7iQmpAufOImJhoC4PpQc2SBercx4/M7oEJxgiglDYSmWN0Un8nMycU5wq/DBwbuHeSggGNLfMe03DmL8m/1cGodvW6yQbBaNraYZrAwfYD1bcwFzTKjis81zQfZOVhYc2wmuwdPpwQxsEYO5I2H7GP9mP5fG8V8iVVA/HpKHA2F+shKA3IbAiHqKqxB9a+ACYRswdQ1WRNPXOUNhScx1/dftKMeKITlPGc8VQAcKn69hmgnrptjPc9H4JUkXc17XnUi8G5o2wcj5Sw4C50L8k5uZxL8J/7W9mItp5T16qMqSd9gOTzDPBGUXNUEAaoIA1AQBqAkCUBMEoCYI4F8TlDlw3RsTlGdQEwSgJjzOkv4An11gCHRy3SIAAAAASUVORK5CYII=" InformativeScreenshot="8eec7333138f3d77a8508a58b3e1771a.png" Reference="ycdoyavAlE-BYqdOwPhPXw/8SSryKzSXUCQ1QbG1jnGfw" ScopeSelectorArgument="&lt;wnd app='pmoffice.exe' ctrlname='PMLockMessageBox' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="477, 336, 486, 181" ContentHash="MSP_cYzy8UqlycbLS7Huyw" FilePath="C:\Program Files\Cerner\pmoffice.exe" IconBase64="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" InformativeScreenshot="7cea902cd9c14b08d8d058e6a358df79.png" Reference="ycdoyavAlE-BYqdOwPhPXw/Vk1ZQmjy-UiFiY1Pau93oA" Selector="&lt;wnd app='pmoffice.exe' ctrlname='PMLockMessageBox' isremoteapp='1' /&gt;" Title="Person Lock" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Lock Manager" sap:VirtualizedContainerService.HintSize="450,1392" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1b3d87fb-c690-4488-98cb-694f8e6db20b" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1078" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message - click om 1st record" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Click on 1st record&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'First Record'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="ce9ff315-d9f8-4256-bf71-328b23925e44" ContentHash="ZQVLhRpidEqsg9TX8jfeCw" DesignTimeRectangle="16, 92, 530, 19" DesignTimeScaleFactor="1" ElementType="ListItem" FullSelectorArgument="&lt;wnd ctrlname='tlpMain' /&gt;&lt;wnd ctrlname='LockTabs' /&gt;&lt;wnd ctrlname='_LockTabs_TabPage0' /&gt;&lt;wnd ctrlname='tlpPM' /&gt;&lt;wnd ctrlname='lvwLocks' /&gt;&lt;ctrl name='*' role='list item' /&gt;" Guid="3f8e39d3-e7c5-4141-8012-1beeb77bb215" InformativeScreenshot="f4bbedbbc39a88c536584d784dd46c13.png" Reference="ycdoyavAlE-BYqdOwPhPXw/1aYNTT_nBEemNbyW5FtsHg" ScopeSelectorArgument="&lt;wnd app='pmoffice.exe' ctrlname='frmView' isremoteapp='1' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message - click on unblcok button" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Click on unblock button&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unlock Button'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="82715edf-c5d1-45c0-899e-958555fd114a" ContentHash="Gv_k4mHaA0W0YCVKJfQgLw" CvElementArea="359, 177, 93, 27" CvTextArea="385, 185, 40, 12" CvTextArgument="Unlock" CvType="Button" DesignTimeRectangle="359, 177, 93, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='tlpMain' /&gt;&lt;wnd ctrlname='LockTabs' /&gt;&lt;wnd ctrlname='_LockTabs_TabPage0' /&gt;&lt;wnd ctrlname='tlpPM' /&gt;&lt;wnd ctrlname='cmdUnLock' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tlpMain' /&gt;&lt;wnd ctrlname='LockTabs' /&gt;&lt;wnd ctrlname='_LockTabs_TabPage0' /&gt;&lt;wnd ctrlname='tlpPM' /&gt;&lt;wnd ctrlname='cmdUnLock' check:text='Unlock' /&gt;" Guid="f82cd72d-a43e-4197-a2bd-797ad169f512" InformativeScreenshot="275da7f8de1c3ac64310d33594b43c08.png" Reference="ycdoyavAlE-BYqdOwPhPXw/a__1bCt_lkG07kmAyFogzA" ScopeSelectorArgument="&lt;wnd app='pmoffice.exe' ctrlname='frmView' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Exit'" sap:VirtualizedContainerService.HintSize="382,218" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="5f426ed8-9089-4415-ad9d-15e5a4801aa3" ContentHash="kAmYvtBzRUO_f1VXHBmdLA" CvElementArea="367, 220, 93, 27" CvTextArea="402, 228, 22, 12" CvTextArgument="Exit" CvType="Button" DesignTimeRectangle="367, 220, 93, 27" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='tlpMain' /&gt;&lt;wnd ctrlname='cmdExit' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tlpMain' /&gt;&lt;wnd ctrlname='cmdExit' check:text='Exit' /&gt;" Guid="eb1651fa-70a3-4573-b58c-ac2eda6a34e5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAAfCAYAAAD3LqMSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEDSURBVGhD7ZXtDYQgEETpiW5ohlZowCK2FCvZgwMVojkuOU8HM5O8+AV/9rmLUeb2UAJAKAEgjYRpmshF1NlJmOeZ/BlKAIASAKAEACgBAEoAgBIAoAQABpIQ1BmjZodVL0frF9I+p+HwGwaDSegVvIN4tYBCKAGAx0iQ4OJoWgqcR5cLUu7Te1FvlxGGJWIwCfVZULBepawJLj67sF63faXo7IRf+dwJmSKqEkMJp/KFhHeRU4fU6yjhRHoS8sy3XlS8rbqBEk4kFTP95XtciAdzU/hNSCMh3ufDuTfWrmUgCc+FEgCgBAAoAQBKAIASAOhKINdQp5HA3BNKAAgl3B7VFzzYkF0ciUBJAAAAAElFTkSuQmCC" InformativeScreenshot="e5c66cafff0a30b24f2cb52a17451816.png" Reference="ycdoyavAlE-BYqdOwPhPXw/-S9uR3u7q0Wkb6P_Zwldvg" ScopeSelectorArgument="&lt;wnd app='pmoffice.exe' ctrlname='frmView' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="73, 66, 466, 273" ContentHash="Im0JiPsYLU-uoSt481DjCQ" FilePath="C:\Program Files\Cerner\pmoffice.exe" IconBase64="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" InformativeScreenshot="754c0e51afa17f415da5aa7abd0a5573.png" Reference="ycdoyavAlE-BYqdOwPhPXw/gufgAOYJBUG03rIcrsrmTQ" Selector="&lt;wnd app='pmoffice.exe' ctrlname='frmView' isremoteapp='1' /&gt;" Title="Person Mgmt: Lock Manager" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

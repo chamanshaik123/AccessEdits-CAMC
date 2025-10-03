@@ -1,0 +1,543 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CAMC_NormPatientAccount" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_intWaitForScreen" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_intNoOfRetry" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_intRetryInterval" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_boRemoveGroupNumber" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_intNormalWaitElement" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_strSubscriberMemberNumber" Type="OutArgument(x:String)" />
+    <x:Property Name="in_intPopUpWaitTime" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strApplicatipnPath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>CAMC_NormPatientAccount_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CAMC_NormPatientAccount" sap:VirtualizedContainerService.HintSize="1628,2692" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strMemberNumber" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Patient Accounting" sap:VirtualizedContainerService.HintSize="1628,1734" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="WindowMessages" OpenMode="Never" ScopeGuid="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1594,1443" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Insurance Primary tab'" sap:VirtualizedContainerService.HintSize="1560,1381" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" Timeout="[in_intWaitForScreen]" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1056,1139" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="strGroupNumber" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log existence of insurance primary tab" sap:VirtualizedContainerService.HintSize="1022,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Insurance Primary Tab exists&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'Insurance Primary tab'" sap:VirtualizedContainerService.HintSize="1022,225" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="70d03679-776e-4f03-9991-9dcead5f1e39" ContentHash="iOr_GocU-ku3izOD3-rtLA" CvElementArea="661, 293, 117, 24" CvTextArea="669, 298, 101, 14" CvTextArgument="Insurance Primary" CvType="Button" DesignTimeRectangle="663, 295, 114, 20" DesignTimeScaleFactor="1" ElementType="TabPage" FullSelectorArgument="&lt;ctrl name='Insurance Primary' role='page tab' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;ctrl name='                                  ' role='page tab' automationid='' /&gt;" Guid="df920214-77f8-4ad3-b15e-84aba147d246" InformativeScreenshot="e01bf4a24a27ee952cef32484d7ab58a.png" Reference="ycdoyavAlE-BYqdOwPhPXw/vKDjdKx8A0q5krSOaoRNtg" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" SelectionStrategy="AA" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="70d03679-776e-4f03-9991-9dcead5f1e39" CvTextArea="663, 244, 97, 12" CvTextArgument="Financial Number:" CvType="Text" DesignTimeRectangle="662, 242, 198, 18" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Financial Number:' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Financial Number:' role='text' automationid='' check:text='Financial Number:' /&gt;" Guid="f76f73de-d10d-4069-a939-0e5b7f99c953" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Revenue Cycle - United States Base Experience(1)" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="0af297b0-5bba-40a6-88a5-5f6ea54f6ef2" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,673" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState DisplayName="Check App State 'Out of Network Health P…'" sap:VirtualizedContainerService.HintSize="954,611" sap2010:WorkflowViewState.IdRef="NCheckState_17" ScopeIdentifier="0af297b0-5bba-40a6-88a5-5f6ea54f6ef2" Version="V4">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,369" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log existence - Out of network health plan" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Trace" Message="[&quot;No  Out of network health plan found&quot;]" />
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="416,132" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f99adab9-ef4b-4049-9d77-9298acc8b4bd" InformativeScreenshot="7f1008635c9521d73a2ccbec8ab3f5e8" Selector="&lt;wnd app='revenuecycle.exe' cls='#32770' isremoteapp='1' title='Out of Network Health Plan' /&gt;&lt;wnd ctrlid='2' title='OK' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log - No  Out of network health plan" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="Fatal" Message="[&quot;No  Out of network health plan not found&quot;]" />
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable CVScreenId="7508f650-e34d-4ae5-9ead-31db8b96cc96" ContentHash="gSSxrJeT6kSl_Jx1grBrvw" DesignTimeRectangle="1, 3, 411, 28" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;uia automationid='TitleBar' role='title bar' /&gt;" FuzzySelectorArgument="&lt;uia automationid='TitleBar' role='title bar' check:text='Out of Network Health Plan' /&gt;" Guid="83e931f1-7cc4-419e-a006-68026f111033" InformativeScreenshot="d9a313df65ef9d8c96c9df9de6214110.png" Reference="7FZokQnjH0eHWoA52xuu7g/jBm7Oa_lXk-P4U0uoE_3Ug" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' cls='#32770' isremoteapp='1' title='Out of Network Health Plan' /&gt;" SearchSteps="Selector, FuzzySelector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="0, 0, 1024, 728" ContentHash="qn5u74d3EEe1G0W-hMcdbg" FilePath="[in_strApplicatipnPath]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGZSURBVFhHzZIBbsIwDEV7dsTNJnEtlmf7U9c0pc1KtScsDzvf38mY/gPPk2KY51+QnmzTBrABo2Q9f9vEg4R8jKrnu009QEhnKN1v94/Zz7YvBWo2eSchG6Onp27TdxCSGUpHXqAXfvYzNmgU02tEZGoEC+xZwlUJSvmmNROPn0ecDX2kvITOmssGrhgALQbVnExPfUy2CNUMJReu31xh2ujVJejpDCZbuGIAtD1zm9s+e5ZwVYJSvrkyodv7udaIXl5CdTsX3yNWCeUYpm+fvAQ1mb9e4NZfwlUJSvnmykR+AUBf482cmBcgFsSocZihF1DWEvTMPBagaLWET0lQyjevub4CMEfmfjaMkrmdaVGX8AknwKxFyDwWkHldwsQZSms3r7n3EtWYqObk6FE4F5kq1szJ0X9fgNKeF6g5Y8athpnyijlB4Xxk0FvC+v4vel+AEoKjOSPzuoQZE/NvpKm/wMs4mypkfuECUI0Vly0A2Vi/hUsXAK9HtsK3orMAvJaI79Okw9+IsKgse1V0ZoTFGlu9K5imX2366l8GV5jhAAAAAElFTkSuQmCC" InformativeScreenshot="0054fc758ac3e3d13b23b53409f787a0.png" Reference="7FZokQnjH0eHWoA52xuu7g/kelnx5PG7EeaNu-wTYyG2A" Selector="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" Title="Revenue Cycle - United States Base Experience - RevElate - Opened by Sankar, Amaladeepan" Version="V1" />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                  <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'Insurance Primary tab' if not completed" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="70d03679-776e-4f03-9991-9dcead5f1e39" ContentHash="iOr_GocU-ku3izOD3-rtLA" CvElementArea="661, 293, 117, 24" CvTextArea="669, 298, 101, 14" CvTextArgument="Insurance Primary" CvType="Button" DesignTimeRectangle="663, 295, 114, 20" DesignTimeScaleFactor="1" ElementType="TabPage" FullSelectorArgument="&lt;ctrl name='Insurance Primary' role='page tab' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;ctrl name='                                  ' role='page tab' automationid='' /&gt;" Guid="df920214-77f8-4ad3-b15e-84aba147d246" InformativeScreenshot="e01bf4a24a27ee952cef32484d7ab58a.png" Reference="ycdoyavAlE-BYqdOwPhPXw/vKDjdKx8A0q5krSOaoRNtg" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" SelectionStrategy="AA" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="70d03679-776e-4f03-9991-9dcead5f1e39" CvTextArea="663, 244, 97, 12" CvTextArgument="Financial Number:" CvType="Text" DesignTimeRectangle="662, 242, 198, 18" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Financial Number:' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Financial Number:' role='text' automationid='' check:text='Financial Number:' /&gt;" Guid="f76f73de-d10d-4069-a939-0e5b7f99c953" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NGetText DisplayName="Get Text 'Subscriber Member Number'" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" TextString="[out_strSubscriberMemberNumber]" Version="V4">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable CVScreenId="22832e54-5fea-4e74-aeb2-7da0cb67c203" ContentHash="mC4jT0xQ8ECLW7aR0pCRZg" DesignTimeRectangle="28, 695, 200, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;uia automationid='53' cls='WindowsForms10.SysTabControl32.app.0.297b065_r79_ad1' /&gt;&lt;uia automationid='*' cls='WindowsForms10.STATIC.app.0.297b065_r79_ad1' name='Subscriber Member Number:' /&gt;&lt;nav up='1' /&gt;&lt;uia automationid='185' cls='WindowsForms10.EDIT.app.0.297b065_r79_ad1' /&gt;" Guid="51726855-a55b-496f-ad5b-53aad70054d9" ImageBase64="" InformativeScreenshot="46d45724bb41d65820d2da78db66c656.png" IsResponsive="True" Reference="ycdoyavAlE-BYqdOwPhPXw/K5IpJ5E43E6cX0ZBTv9pdQ" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="22832e54-5fea-4e74-aeb2-7da0cb67c203" CvTextArea="670, 548, 158, 12" CvTextArgument="*Subscriber Member Number:" CvType="Text" DesignTimeRectangle="27, 678, 198, 18" ElementType="Text" FullSelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Subscriber Member Number:' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Subscriber Member Number:' check:text='Subscriber Member Number:' /&gt;" Guid="885a10cb-c7fa-4869-b385-bffc3cb3742b" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <ui:LogMessage DisplayName="Log Message - Subscriber Member No." sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Subscriber Member No&quot;+out_strSubscriberMemberNumber]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <uix:NCheckState DisplayName="Check App State 'Member Number'" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" Version="V4">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="484,1466" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log member number field found message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Member Number Field Found&quot;]" />
+                        <uix:NGetText DisplayName="Get Text from 'Member Number textbox'" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" TextString="[strMemberNumber]" Version="V4">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable CVScreenId="a1aa5708-a396-41ac-9444-66cc600581ca" ContentHash="6NLvbmjvLU6yx_qfWKH-4A" CvElementArea="241, 620, 202, 25" CvType="InputBox" DesignTimeRectangle="242, 530, 200, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;uia automationid='53' cls='WindowsForms10.SysTabControl32.app.0.297b065_r79_ad1' /&gt;&lt;uia automationid='186' cls='WindowsForms10.EDIT.app.0.297b065_r79_ad1' /&gt;" Guid="c8b20849-71ec-4731-bd7d-a2088b06f31d" InformativeScreenshot="83554b770e7b01d5b61aae1822d3e11a.png" IsResponsive="True" Reference="ycdoyavAlE-BYqdOwPhPXw/BTlfmugqd0mvGCuCncv_fw" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector, CV" SelectionStrategy="UIA" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="a1aa5708-a396-41ac-9444-66cc600581ca" CvTextArea="242, 606, 94, 12" CvTextArgument="Member Number:" CvType="Text" DesignTimeRectangle="241, 513, 198, 18" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Member Number:' check:text='Member Number:' /&gt;" Guid="7794a20d-4e56-4422-be55-ba3a1a97d901" ImageBase64="" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <ui:LogMessage DisplayName="Log the member number" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;Member Number is &quot;+strMemberNumber]" />
+                        <If Condition="[strMemberNumber.Trim.ToLower=out_strSubscriberMemberNumber.Trim.ToLower]" DisplayName="Validate member number against subscriber number" sap:VirtualizedContainerService.HintSize="450,865" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log message for member and subscriber numbers" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Both Member and Subscriber Number are same&quot;]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,476" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log message for number differences" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Both Member and Subscriber Number are different&quot;]" />
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Member Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" Text="[out_strSubscriberMemberNumber]" Version="V4">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable CVScreenId="a1aa5708-a396-41ac-9444-66cc600581ca" ContentHash="6NLvbmjvLU6yx_qfWKH-4A" CvElementArea="241, 620, 202, 25" CvType="InputBox" DesignTimeRectangle="242, 530, 200, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;uia automationid='53' cls='WindowsForms10.SysTabControl32.app.0.297b065_r79_ad1' /&gt;&lt;uia automationid='186' cls='WindowsForms10.EDIT.app.0.297b065_r79_ad1' /&gt;" Guid="c8b20849-71ec-4731-bd7d-a2088b06f31d" InformativeScreenshot="83554b770e7b01d5b61aae1822d3e11a.png" IsResponsive="True" Reference="ycdoyavAlE-BYqdOwPhPXw/BTlfmugqd0mvGCuCncv_fw" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector, CV" SelectionStrategy="UIA" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="a1aa5708-a396-41ac-9444-66cc600581ca" CvTextArea="242, 606, 94, 12" CvTextArgument="Member Number:" CvType="Text" DesignTimeRectangle="241, 513, 198, 18" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Member Number:' check:text='Member Number:' /&gt;" Guid="7794a20d-4e56-4422-be55-ba3a1a97d901" ImageBase64="" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log message for member number absence" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Member Number Field absent&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable CVScreenId="743d5a7d-a11e-4a4c-9e64-a3c3666c382c" ContentHash="7_KqsTDeWUOB2Pd5HhiyGw" DesignTimeRectangle="883, 546, 198, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;uia automationid='53' cls='WindowsForms10.SysTabControl32.app.0.297b065_r79_ad1' /&gt;&lt;uia automationid='*' cls='WindowsForms10.STATIC.app.0.297b065_r79_ad1' name='Member Number:' /&gt;" Guid="60f3143f-5421-4535-bf88-a1482d6da488" InformativeScreenshot="b729efd58f12ee677ac71a1748eea2d7.png" Reference="ycdoyavAlE-BYqdOwPhPXw/SzSmjGyy8ESBfK335lNGGw" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NGetText DisplayName="Get Text 'Group Number'" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" TextString="[strGroupNumber]" Version="V4">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable CVScreenId="131f4c65-7ed3-461d-b4b8-964b862783db" ContentHash="oR-QGya930qePaNbAhW2Ug" CvElementArea="670, 620, 202, 25" CvType="InputBox" DesignTimeRectangle="670, 530, 200, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;uia automationid='53' cls='WindowsForms10.SysTabControl32.app.0.297b065_r79_ad1' /&gt;&lt;uia automationid='189' cls='WindowsForms10.EDIT.app.0.297b065_r79_ad1' /&gt;" Guid="3fea3758-15c8-47c2-a751-d5252ec827cf" InformativeScreenshot="998a253487c909d739a129d5c7dbbadb.png" IsResponsive="True" Reference="ycdoyavAlE-BYqdOwPhPXw/Ik7-XvWG8kmJvF0bAHKfOQ" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector, CV" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="131f4c65-7ed3-461d-b4b8-964b862783db" CvTextArea="670, 606, 83, 14" CvTextArgument="Group Number:" CvType="Text" DesignTimeRectangle="669, 513, 198, 18" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Group Number:' check:text='Group Number:' /&gt;" Guid="d0d7f02c-1199-44b6-a075-d5451f0aff66" ImageBase64="" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <ui:LogMessage DisplayName="Log message for group number" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Group Number : &quot;+strGroupNumber]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <If Condition="[in_boRemoveGroupNumber]" DisplayName="If check to set group number to null" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="set Group Number to Null" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[strGroupNumber]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Update Group Number" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[strGroupNumber]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[strGroupNumber.Replace(out_strSubscriberMemberNumber,"")]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Group Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1022,57" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="d77f8110-d309-4ed8-bdf2-1cf3dfa11775" Text="[strGroupNumber + &quot;[k(Enter)]&quot;]" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable CVScreenId="5b679cc4-9e9b-49af-bb3d-4881194a2706" ContentHash="WIkrnNacCUKECRqAFjBONw" CvElementArea="27, 549, 202, 25" CvType="InputBox" DesignTimeRectangle="28, 550, 200, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' idx='2' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' idx='42' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="a8c91724-8c7c-4f37-b758-d0dbc0f50e63" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAbCAYAAAAwGWBlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHqSURBVHhe7ZfrkYMgFEatyyq2CopIERmrsYGUYRc2wHKvgIiQiHGzuzPnzHwzEXnkxz2A3TzP9vN52PvX3T6K7wj5u/klYQj5n4nC3G43QkglRWEAYA/CADSAMAANIAxAAwgD0MBxYUZju87Y0T8q2tZp+mHyjY5i+2SHfmmTmM1EjsL809DH/ru1Hfq+H9zMntr/AbiIA8L4QjfGmk3Rjsmz/O7tUqP132MYPA22j2Nr87sRpiBWROZ244IwmznTdQGu4/gJo0WYFLTs5kk1y26vu7oUbrLrl4s+m0vZt42mXvSynhnWteL6nvwZ4ApOC7MryCiQnBjpCZOL4chkW8j7bq9wm7VEShmfyIkw8Al+QBiHXo+WQk+9kDEqwE4WoSKXIu+ChImQ6Wmm3y9h/CIbwsDVXC/MkSuZFnd+3XomzDKPrLdZN1srCunmNu46hzBwNaeFiYJ4QiFXRcrYi/RaGDNKn/WaFpNIEyh/OwG8x3lh9NoVnuWdPzFEkOyEUYFcsa/1m/SPPBFG18r7O7ITJpL9B4CrOC+MoFerZZdPd/P1auQSXmjR+7as/0I+vzw/6+/YCJP2r4gH8CYNwgAAwgA0gDAADSAMQAMIA9AAwgA0gDAADVSFIYSUsxOGEPI6CEPI4cz2G4pYBtdhV7mUAAAAAElFTkSuQmCC" IsResponsive="True" Reference="ycdoyavAlE-BYqdOwPhPXw/RPhsuaPSSkiMsq5FCjGtbw" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="5b679cc4-9e9b-49af-bb3d-4881194a2706" CvTextArea="28, 535, 83, 14" CvTextArgument="Group Number:" CvType="Text" DesignTimeRectangle="27, 533, 198, 18" ElementType="Text" FullSelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' idx='2' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Group Number:' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.SysTabControl*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Insurance Primary' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Group Number:' check:text='Group Number:' /&gt;" Guid="b36a27ef-05b0-486c-9dce-214cf9164895" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMoAAAAWCAYAAACBmQP8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH5SURBVHhe7ZftkYMgFEW3REvhd4qgENqgDLtIAyyPp/B4oLKzG5NlLjNnJqJ8aO4R/Ho+nwEAcA5EAWAAiALAABAFgAEgCgADQBQABjgWZXXBLEtYMia4tXPdy1mDM3F861W9D3axwVd1v+Gv+wMz0RfF2yiGCk2ss14c38YmSpS1Hh+igPvoiEKBedfq0YNEifPxcYUzLqy5HqKA+2hFodWk2eZIOFDOmbIdU9u0/Oanehnu6ngLZlq9trbdcTdR4jjeLsG4dasXwf7RONSmrFLL6Hyqe9zG1c+ikRnMQiPKGv/0EkY+3oPD9RQOEdgUILkC0Xkh0GmAZRj5uN3eFVGqvtPvUVHKOHw/ex8sDI95Mh/df36Z8DXVs5DXgWkYXlGKQCKgROf6fO1lgEU/ES0pI0WJVCEdFeV4vrRKFVEO5kNtSCJJ6r9tA+akFYVC1vnzP0aUvAqI9neIou6RaduAOel8zHNAyt691HVFSWLJINN5uT0q5+p+6Zz+5pD97GhRIkmEOJ88j6txRkU5mE9zjzuqby0smIauKEQKW7PVoHMqHITamnDwGNmPsbZ50/OHcNuu0BElwv2WeVyNMybKyXzUPR6+NCDKlByK8no6wgHwoUAUAAaAKAAM8EZRAPg/VKI8Hg8AQIdGFBQUlLZAFBSUyxLCNyA4SkNVTLEmAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Updated Group Number " sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;New Group Number is &quot;+strGroupNumber]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:LogMessage DisplayName="Log subscriber member number information" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Subscriber Member Number : &quot;+out_strSubscriberMemberNumber]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="[in_intRetryInterval]" DisplayName="Click 'Complete button'" sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="fa2cd829-e012-41d0-ad45-2cff0e8de9cb" ContentHash="9c_FhBOpWkyMJDHqNqDb3w" CvElementArea="1241, 805, 94, 32" CvTextArea="1262, 814, 52, 14" CvTextArgument="Complete" CvType="Button" DesignTimeRectangle="1241, 805, 93, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Complete' cls='WindowsForms10.BUTTON.*' title='&amp;amp;Complete' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Complete' cls='WindowsForms10.BUTTON.*' title='&amp;amp;Complete' check:text='*Complete' /&gt;" Guid="1fc3cc02-17f4-4896-af80-55f745ba1a57" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAAkCAYAAACZk1R8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGiSURBVGhD7ZTbkcMgDEXpjG7ohS78y4fLoBBXooXwMNjgZGdtUHauZs5MsGSIdQBBiOkBCQwCEhhEJWFdVzCIMk4Stm0DDwMJDIAEBkACAyCBAZDAAEhgACQwABIYME+C1SSFIBFRplFzO4aUUGSauXlMkWC1dI2vm2G0JluMn+EzCUaN2hSBCRJm7kZICBhFQpl2ztO9pmID/fuvnG+mJS1jrUwn6VjnyOsdJFRrhedeQH4vzdmoy//3BoZL8FeR1LaZCx8rSdv0zDctjf1v14TY0HClpVyQEYTVdWm852IT/VpZnKPYHNVJuKi7C14noZHbpRUNbNTujTvUOZpz+Pfz7o7EZlcSLurS/H9lvITXbu8c6dESOpvhJKFTdxfjJTj8R9a7yV0nyo3fXkefShDFldeZ47TWTiXhou4upkjwhDs9HfHiI31z8/OiGb+SoEgX81/OUayVxaXnaaP06m5imoTnODT6C4AEBkACA/6hhO8DEhgACQyABAZAAgMggQGQwIC3EsAYyqgkIOYEJDAIsSwLcSRFK8eZFK1cm4V+ADlCb98qB2h4AAAAAElFTkSuQmCC" InformativeScreenshot="a7a4e6ae66d1d2554e593b2a27ff1a8d.png" Reference="ycdoyavAlE-BYqdOwPhPXw/bMPrlSeW00CjM0mzSt9giw" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,352" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log fatal error for missing tab" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Fatal" Message="[&quot;Insurance Primary Tab not found&quot;]" />
+                  <Throw DisplayName="Throw - Insurance Primary tab not found" Exception="[new Exception(&quot;Insurance Primary Tab not found&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable CVScreenId="70d03679-776e-4f03-9991-9dcead5f1e39" ContentHash="iOr_GocU-ku3izOD3-rtLA" CvElementArea="661, 293, 117, 24" CvTextArea="669, 298, 101, 14" CvTextArgument="Insurance Primary" CvType="Button" DesignTimeRectangle="663, 295, 114, 20" DesignTimeScaleFactor="1" ElementType="TabPage" FullSelectorArgument="&lt;ctrl name='Insurance Primary' role='page tab' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;ctrl name='                                  ' role='page tab' automationid='' /&gt;" Guid="df920214-77f8-4ad3-b15e-84aba147d246" InformativeScreenshot="e01bf4a24a27ee952cef32484d7ab58a.png" Reference="ycdoyavAlE-BYqdOwPhPXw/vKDjdKx8A0q5krSOaoRNtg" ScopeSelectorArgument="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, CV" SelectionStrategy="AA" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="70d03679-776e-4f03-9991-9dcead5f1e39" CvTextArea="663, 244, 97, 12" CvTextArgument="Financial Number:" CvType="Text" DesignTimeRectangle="662, 242, 198, 18" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Financial Number:' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Financial Number:' role='text' automationid='' check:text='Financial Number:' /&gt;" Guid="f76f73de-d10d-4069-a939-0e5b7f99c953" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 1280, 760" ContentHash="Ul9vJgUVz028PMUplfA4qA" FilePath="[in_strApplicatipnPath]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGZSURBVFhHzZIBbsIwDEV7dsTNJnEtlmf7U9c0pc1KtScsDzvf38mY/gPPk2KY51+QnmzTBrABo2Q9f9vEg4R8jKrnu009QEhnKN1v94/Zz7YvBWo2eSchG6Onp27TdxCSGUpHXqAXfvYzNmgU02tEZGoEC+xZwlUJSvmmNROPn0ecDX2kvITOmssGrhgALQbVnExPfUy2CNUMJReu31xh2ujVJejpDCZbuGIAtD1zm9s+e5ZwVYJSvrkyodv7udaIXl5CdTsX3yNWCeUYpm+fvAQ1mb9e4NZfwlUJSvnmykR+AUBf482cmBcgFsSocZihF1DWEvTMPBagaLWET0lQyjevub4CMEfmfjaMkrmdaVGX8AknwKxFyDwWkHldwsQZSms3r7n3EtWYqObk6FE4F5kq1szJ0X9fgNKeF6g5Y8athpnyijlB4Xxk0FvC+v4vel+AEoKjOSPzuoQZE/NvpKm/wMs4mypkfuECUI0Vly0A2Vi/hUsXAK9HtsK3orMAvJaI79Okw9+IsKgse1V0ZoTFGlu9K5imX2366l8GV5jhAAAAAElFTkSuQmCC" InformativeScreenshot="9f3001a64698e3526bf38b21ac7e1f86.png" Reference="7FZokQnjH0eHWoA52xuu7g/iSfBM_s5ykyIyEXTxh8aWg" Selector="&lt;wnd app='revenuecycle.exe' ctrlname='frmConversation' isremoteapp='1' /&gt;" Title="Patient Accounting" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
